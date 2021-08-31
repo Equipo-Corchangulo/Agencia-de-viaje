@@ -2,22 +2,13 @@ package sistemaTurismo;
 
 public class Atraccion implements Facturable {
 
-	public double costoVisita() {
-		return 0.0;
-	}
-	
-	public void TiempoPromedio () {
-		
-	}
-	
-	public int cupoDiario() {
-		return 0;
-		
-	}
-	
-	public enum tipoAtraccion {
-		
-	}
+	private double costoVisita;
+
+	private int TiempoPromedio;
+
+	private int cupoDiario;
+
+	private PromocionType tipoAtraccion;
 
 	@Override
 	public double obtenerCostoTotatl() {
