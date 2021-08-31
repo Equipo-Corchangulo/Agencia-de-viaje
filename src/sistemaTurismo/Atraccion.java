@@ -4,6 +4,22 @@ public class Atraccion implements Facturable {
 
 	private double costoVisita;
 
+	public int getCupoDiario() {
+		return cupoDiario;
+	}
+
+	public void setCupoDiario(int cupoDiario) {
+		this.cupoDiario = cupoDiario;
+	}
+
+	public PromocionType getTipoAtraccion() {
+		return tipoAtraccion;
+	}
+
+	public void setTipoAtraccion(PromocionType tipoAtraccion) {
+		this.tipoAtraccion = tipoAtraccion;
+	}
+
 	private int TiempoPromedio;
 
 	private int cupoDiario;

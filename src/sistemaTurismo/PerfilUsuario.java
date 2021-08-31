@@ -3,20 +3,33 @@ package sistemaTurismo;
 public class PerfilUsuario {
 
 
-	public double presupuesto () {
-		return 0;
+	private double presupuesto;
+
+	private int tiempoDisponible;
+
+	private PromocionType tipoDeAtraccion;
+
+	public double getPresupuesto() {
+		return presupuesto;
 	}
-	
-	public int tiempoDisponible() {
-		return 0;
+
+	public void setPresupuesto(double presupuesto) {
+		this.presupuesto = presupuesto;
 	}
-	
-	public enum tipoDeAtraccion {
-		
+
+	public int getTiempoDisponible() {
+		return tiempoDisponible;
 	}
-	
-	public void AceptarAtraccion() {
-		
+
+	public void setTiempoDisponible(int tiempoDisponible) {
+		this.tiempoDisponible = tiempoDisponible;
 	}
-	
+
+	public PromocionType getTipoDeAtraccion() {
+		return tipoDeAtraccion;
+	}
+
+	public void setTipoDeAtraccion(PromocionType tipoDeAtraccion) {
+		this.tipoDeAtraccion = tipoDeAtraccion;
+	}
 }

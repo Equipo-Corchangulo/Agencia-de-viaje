@@ -2,14 +2,14 @@ package sistemaTurismo;
 
 public interface Facturable {
 
-	public double obtenerCostoTotatl();
+	 double obtenerCostoTotatl();
 	
-	public int obtenerTiempoTotal();
+	 int obtenerTiempoTotal();
 	
-	public boolean hayCupo();
+	 boolean hayCupo();
 	
-	public void restarCupo();
+	 void restarCupo();
 	
-	public void getTipo();
+	 void getTipo();
 	
 }

@@ -2,13 +2,25 @@ package sistemaTurismo;
 
 public class Itinerario {
 
-	public float horasNecesarias() {
-		return 0;
+	private float horasNecesarias;
+
+	public float getHorasNecesarias() {
+		return horasNecesarias;
 	}
-	
-	public double costoMonedas() {
-		 return 0.0;
+
+	public void setHorasNecesarias(float horasNecesarias) {
+		this.horasNecesarias = horasNecesarias;
 	}
+
+	public double getCostoMonedas() {
+		return costoMonedas;
+	}
+
+	public void setCostoMonedas(double costoMonedas) {
+		this.costoMonedas = costoMonedas;
+	}
+
+	private double costoMonedas;
 	
 	public Facturable[] ListaDeVisitas() {
 		

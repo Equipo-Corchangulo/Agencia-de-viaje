@@ -4,6 +4,14 @@ public class PromoAxB extends Promocion {
 
 	public String atracionExtra;
 
+	public String getAtracionExtra() {
+		return atracionExtra;
+	}
+
+	public void setAtracionExtra(String atracionExtra) {
+		this.atracionExtra = atracionExtra;
+	}
+
 	@Override
 	public double obtenerCostoTotatl() {
 		// TODO Auto-generated method stub
