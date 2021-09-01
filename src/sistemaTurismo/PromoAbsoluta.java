@@ -37,8 +37,8 @@ public class PromoAbsoluta extends Promocion {
 	}
 
 	@Override
-	public void getTipo() {
-		// TODO Auto-generated method stub
+	public PromocionType getTipo() {
 		
+		return this.tipoDePromocion;	
 	}
 }

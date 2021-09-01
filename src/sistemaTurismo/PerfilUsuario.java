@@ -8,6 +8,18 @@ public class PerfilUsuario {
 	private int tiempoDisponible;
 
 	private PromocionType tipoDeAtraccion;
+	
+	public PerfilUsuario(double presupuesto, int tiempoDisponible, PromocionType tipoDeAtraccion) {
+		this.presupuesto = presupuesto;
+		this.tiempoDisponible = tiempoDisponible;
+		this.tipoDeAtraccion = tipoDeAtraccion;
+	}
+
+	@Override
+	public String toString() {
+		return "PerfilUsuario [presupuesto=" + presupuesto + ", tiempoDisponible=" + tiempoDisponible
+				+ ", tipoDeAtraccion=" + tipoDeAtraccion + "]";
+	}
 
 	public double getPresupuesto() {
 		return presupuesto;

@@ -10,6 +10,6 @@ public interface Facturable {
 	
 	 void restarCupo();
 	
-	 void getTipo();
+	 PromocionType getTipo();
 	
 }

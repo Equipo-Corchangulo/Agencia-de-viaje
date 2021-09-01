@@ -38,8 +38,9 @@ public class PromoPorcentual extends Promocion {
 	}
 
 	@Override
-	public void getTipo() {
-		// TODO Auto-generated method stub
+	public PromocionType getTipo() {
+		
+		 return this.tipoDePromocion;
 		
 	}
 	

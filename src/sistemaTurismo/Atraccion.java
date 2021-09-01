@@ -3,57 +3,57 @@ package sistemaTurismo;
 public class Atraccion implements Facturable {
 
 	private double costoVisita;
-
-	public int getCupoDiario() {
-		return cupoDiario;
-	}
-
-	public void setCupoDiario(int cupoDiario) {
-		this.cupoDiario = cupoDiario;
-	}
-
-	public PromocionType getTipoAtraccion() {
-		return tipoAtraccion;
-	}
-
-	public void setTipoAtraccion(PromocionType tipoAtraccion) {
-		this.tipoAtraccion = tipoAtraccion;
-	}
-
-	private int TiempoPromedio;
-
+	private int tiempoPromedio;
 	private int cupoDiario;
-
+	private String nombre;
 	private PromocionType tipoAtraccion;
+	
+	public Atraccion(double costoVisita, int tiempoPromedio, int cupoDiario, PromocionType tipoAtraccion, String nombre) {
+		super();
+		this.costoVisita = costoVisita;
+		this.tiempoPromedio = tiempoPromedio;
+		this.cupoDiario = cupoDiario;
+		this.tipoAtraccion = tipoAtraccion;
+		this.nombre = nombre;
+	}
+
+	@Override
+	public String toString() {
+		return "Atraccion [costoVisita=" + costoVisita + ", tiempoPromedio=" + tiempoPromedio + ", cupoDiario="
+				+ cupoDiario + ", nombre=" + nombre + ", tipoAtraccion=" + tipoAtraccion + "]";
+	}
 
 	@Override
 	public double obtenerCostoTotatl() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+		return this.costoVisita;
 	}
 
 	@Override
 	public int obtenerTiempoTotal() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+		return  this.tiempoPromedio;
 	}
 
 	@Override
 	public boolean hayCupo() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return this.cupoDiario > 0;
 	}
 
 	@Override
 	public void restarCupo() {
-		// TODO Auto-generated method stub
+		this.cupoDiario--;
 		
 	}
 
 	@Override
-	public void getTipo() {
-		// TODO Auto-generated method stub
+	public PromocionType getTipo() {
+	
+		return this.tipoAtraccion;
 		
 	}
+
+
 	
 }
