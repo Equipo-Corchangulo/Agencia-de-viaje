@@ -1,5 +1,6 @@
 package sistemaTurismo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 enum PromocionType {
@@ -12,12 +13,13 @@ public class AgenciaTurismo {
 
 public static void main(String[] args) {
 	List<Atraccion> lista = ManejadorDeArchivo.obtenerAtracciones();
-	System.out.println(lista.get(0));
-	System.out.println(lista.get(1));
 	
 	List<PerfilUsuario> lista2 = ManejadorDeArchivo.obtenerUsuario();
-	System.out.println(lista2.get(0));
-	System.out.println(lista2.get(1));
+	
+	Recomendador recomendar = new Recomendador(lista2, lista, new ArrayList<Promocion>());
+	recomendar.ofrecerSugerencias();
+	
+	System.out.println(lista.get(0).getCupo());
 }
 	
 }

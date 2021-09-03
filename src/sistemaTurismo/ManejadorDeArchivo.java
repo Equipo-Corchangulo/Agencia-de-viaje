@@ -56,9 +56,10 @@ public class ManejadorDeArchivo {
 					double presupuesto = Double.parseDouble(usuarioBase[0]);
 					int tiempoDisponible = Integer.parseInt(usuarioBase[1]);
 					PromocionType tipoAtraccion = PromocionType.valueOf(usuarioBase[2]);
+					String nombre = usuarioBase[3];
 					
 					
-					PerfilUsuario nuevoUsuario = new PerfilUsuario(presupuesto, tiempoDisponible, tipoAtraccion);
+					PerfilUsuario nuevoUsuario = new PerfilUsuario(presupuesto, tiempoDisponible, tipoAtraccion, nombre);
 					listaDePerfilUsuario.add(nuevoUsuario);
 					
 					

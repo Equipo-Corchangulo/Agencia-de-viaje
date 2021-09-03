@@ -19,8 +19,9 @@ public class Atraccion implements Facturable {
 
 	@Override
 	public String toString() {
-		return "Atraccion [costoVisita=" + costoVisita + ", tiempoPromedio=" + tiempoPromedio + ", cupoDiario="
-				+ cupoDiario + ", nombre=" + nombre + ", tipoAtraccion=" + tipoAtraccion + "]";
+		return "Atraccion : " + nombre + ", tiempo promedio : " + tiempoPromedio + ", costo : " + costoVisita +
+				", tipo de atraccion : " + tipoAtraccion; 
+		
 	}
 
 	@Override
@@ -46,7 +47,10 @@ public class Atraccion implements Facturable {
 		this.cupoDiario--;
 		
 	}
-
+	
+	public int getCupo() {
+		return this.cupoDiario;
+	}
 	@Override
 	public PromocionType getTipo() {
 	

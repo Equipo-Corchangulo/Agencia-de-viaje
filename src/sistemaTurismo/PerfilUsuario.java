@@ -6,15 +6,18 @@ public class PerfilUsuario {
 	private double presupuesto;
 
 	private int tiempoDisponible;
+	private String nombre;
 
 	private PromocionType tipoDeAtraccion;
 	
-	public PerfilUsuario(double presupuesto, int tiempoDisponible, PromocionType tipoDeAtraccion) {
+	public PerfilUsuario(double presupuesto, int tiempoDisponible, PromocionType tipoDeAtraccion, String nombre) {
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.tipoDeAtraccion = tipoDeAtraccion;
+		this.nombre = nombre;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "PerfilUsuario [presupuesto=" + presupuesto + ", tiempoDisponible=" + tiempoDisponible
@@ -44,4 +47,13 @@ public class PerfilUsuario {
 	public void setTipoDeAtraccion(PromocionType tipoDeAtraccion) {
 		this.tipoDeAtraccion = tipoDeAtraccion;
 	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 }

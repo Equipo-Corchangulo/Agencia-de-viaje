@@ -1,31 +1,28 @@
 package sistemaTurismo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Itinerario {
 
 	private float horasNecesarias;
+	private double costoMonedas;
+	private List<Facturable> ListaDeVisitas = new ArrayList<Facturable>();
 
 	public float getHorasNecesarias() {
 		return horasNecesarias;
 	}
 
-	public void setHorasNecesarias(float horasNecesarias) {
-		this.horasNecesarias = horasNecesarias;
-	}
-
 	public double getCostoMonedas() {
 		return costoMonedas;
 	}
-
-	public void setCostoMonedas(double costoMonedas) {
-		this.costoMonedas = costoMonedas;
-	}
-
-	private double costoMonedas;
 	
-	public Facturable[] ListaDeVisitas() {
+	public List<Facturable> getListaDeVisitas() {
 		
-		Facturable[] lista = {};
-		return lista;
+		return this.ListaDeVisitas;
+	}
+	public void agregarAtraccion(Facturable atraccion) {
+		this.ListaDeVisitas.add(atraccion);
 	}
 	
 	

@@ -1,8 +1,10 @@
 package sistemaTurismo;
 
+import java.util.List;
+
 public abstract class Promocion  implements Facturable {
 
-	public String[] listaDeAtracciones; 
+	public List<String> listaDeAtracciones; 
 	
 	public PromocionType tipoDePromocion;
 	
