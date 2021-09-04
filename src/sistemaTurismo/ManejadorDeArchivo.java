@@ -63,7 +63,12 @@ public class ManejadorDeArchivo {
 		String nombreDePromocuon = promocionBase[2];
 
 		//ver bien como determinamos esto
-		List<String> listaDeAtracciones = new ArrayList<String>();
+		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
+		String[] indicesAtracciones = promocionBase[3].split("-");
+		for (String indice : indicesAtracciones) {
+			listaDeAtracciones.add(AgenciaTurismo.atracciones.get(Integer.parseInt(indice)));
+		}
+
 
 		//declaramos una nueva Promocion ( lo hacemos del tipo de la clase abstracta para que no nos importe realmente
 		// de que tipo estamos creando lo podemos guardar aca igual (evitamos tener una variable por cada tipo de promocion))
@@ -72,15 +77,15 @@ public class ManejadorDeArchivo {
 		//dependiendo del tipo de promocion utilizamos una clase distinta y pedimos un dato distinto
 		switch (tipoPromocion){
 			case 0:
-				double costofijo = Double.parseDouble(promocionBase[3]);
+				double costofijo = Double.parseDouble(promocionBase[4]);
 				nuevaPromocion = new PromoAbsoluta(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,costofijo);
 				break;
 			case 1:
-				String promoExtra = promocionBase[3];
+				String promoExtra = promocionBase[4];
 				nuevaPromocion = new PromoAxB(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,promoExtra);
 				break;
 			case 2:
-				double porcentajeDescuento = Double.parseDouble(promocionBase[3]);
+				double porcentajeDescuento = Double.parseDouble(promocionBase[4]);
 				nuevaPromocion = new PromoPorcentual(listaDeAtracciones, tipoDePromocion, nombreDePromocuon, porcentajeDescuento);
 				break;
 			default:

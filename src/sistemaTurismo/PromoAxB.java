@@ -6,7 +6,7 @@ public class PromoAxB extends Promocion {
 
 	public String atracionExtra;
 
-	public PromoAxB(List<String> listaDeAtracciones, TiposDeAtraccion tipoDePromocion, String nombreDePromocion, String atracionExtra) {
+	public PromoAxB(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion, String nombreDePromocion, String atracionExtra) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
 		this.atracionExtra = atracionExtra;
 	}

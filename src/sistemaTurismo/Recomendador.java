@@ -65,20 +65,21 @@ public class Recomendador {
 			
 			List <Facturable> promocionesRecomendadas = filtarPorTipo(usuario.getTipoDeAtraccion(), false, true);
 			List <Facturable> promocionesNoRecomendadas = filtarPorTipo(usuario.getTipoDeAtraccion(), true, true);
-			
+
+			iterarSugerencias(promocionesRecomendadas, usuario, nuevoItinerario);
 			//recorremos las atracciones para ver que le podemos recomendar
-			iterarSugerencias(atraccionesRecomendadas, usuario, nuevoItinerario); 
-			
-			if(usuario.tieneTiempoYdinero()) {
-				iterarSugerencias(atraccioneNoRecomendadas, usuario, nuevoItinerario);
-			}
+			iterarSugerencias(atraccionesRecomendadas, usuario, nuevoItinerario);
+			iterarSugerencias(atraccioneNoRecomendadas, usuario, nuevoItinerario);
+
 			listaDeItinerarios.add(nuevoItinerario);
 		}
 	}
 	
 	public void iterarSugerencias(List<Facturable> atraccionesAiterar, PerfilUsuario usuario, Itinerario nuevoItinerario) {
 		for (Facturable atraccion : atraccionesAiterar) {
-			
+			if (!usuario.tieneTiempoYdinero()){
+				return;
+			}
 			//si el usuario tiene dinero y tiempo se lo recomendamos y si la atraccion tiene cupo.
 			if(usuario.getPresupuesto() >= atraccion.obtenerCostoTotatl() 
 					&& usuario.getTiempoDisponible() >= atraccion.obtenerTiempoTotal()
