@@ -12,14 +12,14 @@ enum PromocionType {
 public class AgenciaTurismo {
 
 public static void main(String[] args) {
-	List<Atraccion> lista = ManejadorDeArchivo.obtenerAtracciones();
+	List<Facturable> atracciones = ManejadorDeArchivo.obtenerAtracciones(false);
 	
-	List<PerfilUsuario> lista2 = ManejadorDeArchivo.obtenerUsuario();
+	List<PerfilUsuario> usuarios = ManejadorDeArchivo.obtenerUsuario();
 	
-	Recomendador recomendar = new Recomendador(lista2, lista, new ArrayList<Promocion>());
+	Recomendador recomendar = new Recomendador(usuarios, atracciones, new ArrayList<Facturable>());
 	recomendar.ofrecerSugerencias();
 	
-	System.out.println(lista.get(0).getCupo());
+	System.out.println(((Atraccion) atracciones.get(0)).getCupo());
 }
 	
 }

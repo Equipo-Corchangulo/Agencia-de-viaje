@@ -1,21 +1,23 @@
 package sistemaTurismo;
 
+import java.util.List;
+
 public class PromoAbsoluta extends Promocion {
 
 	private double costoFijo;
+
+	public PromoAbsoluta(List<String> listaDeAtracciones, PromocionType tipoDePromocion, String nombreDePromocion, double costoFijo) {
+		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
+		this.costoFijo = costoFijo;
+	}
 
 	public double getCostoFijo() {
 		return costoFijo;
 	}
 
-	public void setCostoFijo(double costoFijo) {
-		this.costoFijo = costoFijo;
-	}
-
 	@Override
 	public double obtenerCostoTotatl() {
-		// TODO Auto-generated method stub
-		return 0;
+		return costoFijo;
 	}
 
 	@Override

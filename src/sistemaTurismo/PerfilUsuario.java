@@ -7,7 +7,6 @@ public class PerfilUsuario {
 
 	private int tiempoDisponible;
 	private String nombre;
-
 	private PromocionType tipoDeAtraccion;
 	
 	public PerfilUsuario(double presupuesto, int tiempoDisponible, PromocionType tipoDeAtraccion, String nombre) {
@@ -55,5 +54,13 @@ public class PerfilUsuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	
+	public void reservarTiempoYdinero(Facturable atraccion) {
+		this.tiempoDisponible -= atraccion.obtenerTiempoTotal();
+		this.presupuesto -= atraccion.obtenerCostoTotatl();
+	}
+	
+	public boolean tieneTiempoYdinero() {
+		return this.tiempoDisponible > 0 && this.presupuesto > 0 ;
+	}
 }

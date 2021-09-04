@@ -1,16 +1,19 @@
 package sistemaTurismo;
 
 
+import java.util.List;
+
 public class PromoPorcentual extends Promocion {
 	
 	private double porcentajeDescuento;
 
-	public double getPorcentajeDescuento() {
-		return porcentajeDescuento;
+	public PromoPorcentual(List<String> listaDeAtracciones, PromocionType tipoDePromocion, String nombreDePromocion, double porcentajeDescuento) {
+		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
+		this.porcentajeDescuento = porcentajeDescuento;
 	}
 
-	public void setPorcentajeDescuento(double porcentajeDescuento) {
-		this.porcentajeDescuento = porcentajeDescuento;
+	public double getPorcentajeDescuento() {
+		return porcentajeDescuento;
 	}
 
 	@Override

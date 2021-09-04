@@ -21,8 +21,11 @@ public class Itinerario {
 		
 		return this.ListaDeVisitas;
 	}
+	
 	public void agregarAtraccion(Facturable atraccion) {
 		this.ListaDeVisitas.add(atraccion);
+		horasNecesarias += atraccion.obtenerTiempoTotal();
+		costoMonedas += atraccion.obtenerCostoTotatl();
 	}
 	
 	

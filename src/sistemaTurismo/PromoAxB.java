@@ -1,8 +1,15 @@
 package sistemaTurismo;
 
+import java.util.List;
+
 public class PromoAxB extends Promocion {
 
 	public String atracionExtra;
+
+	public PromoAxB(List<String> listaDeAtracciones, PromocionType tipoDePromocion, String nombreDePromocion, String atracionExtra) {
+		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
+		this.atracionExtra = atracionExtra;
+	}
 
 	public String getAtracionExtra() {
 		return atracionExtra;
