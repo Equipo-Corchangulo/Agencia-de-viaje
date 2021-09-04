@@ -1,7 +1,6 @@
 package sistemaTurismo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Recomendador {
@@ -22,7 +21,7 @@ public class Recomendador {
 		this.listaDeItinerarios = new ArrayList<Itinerario>();
 	}
 	
-	public List<Facturable> filtarPorTipo(PromocionType tipo, boolean excluir, boolean filtrarPromocion) {
+	public List<Facturable> filtarPorTipo(TiposDeAtraccion tipo, boolean excluir, boolean filtrarPromocion) {
 		List<Facturable> listaFiltrada = new ArrayList<Facturable>();
 		List<Facturable> listaAFiltrar = filtrarPromocion ? listaDePromociones : listaDeAtracciones;
 		

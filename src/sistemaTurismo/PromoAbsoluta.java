@@ -6,7 +6,7 @@ public class PromoAbsoluta extends Promocion {
 
 	private double costoFijo;
 
-	public PromoAbsoluta(List<String> listaDeAtracciones, PromocionType tipoDePromocion, String nombreDePromocion, double costoFijo) {
+	public PromoAbsoluta(List<String> listaDeAtracciones, TiposDeAtraccion tipoDePromocion, String nombreDePromocion, double costoFijo) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
 		this.costoFijo = costoFijo;
 	}
@@ -39,7 +39,7 @@ public class PromoAbsoluta extends Promocion {
 	}
 
 	@Override
-	public PromocionType getTipo() {
+	public TiposDeAtraccion getTipo() {
 		
 		return this.tipoDePromocion;	
 	}

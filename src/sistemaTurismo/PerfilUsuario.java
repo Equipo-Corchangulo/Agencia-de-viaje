@@ -7,9 +7,9 @@ public class PerfilUsuario {
 
 	private int tiempoDisponible;
 	private String nombre;
-	private PromocionType tipoDeAtraccion;
+	private TiposDeAtraccion tipoDeAtraccion;
 	
-	public PerfilUsuario(double presupuesto, int tiempoDisponible, PromocionType tipoDeAtraccion, String nombre) {
+	public PerfilUsuario(double presupuesto, int tiempoDisponible, TiposDeAtraccion tipoDeAtraccion, String nombre) {
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.tipoDeAtraccion = tipoDeAtraccion;
@@ -39,11 +39,11 @@ public class PerfilUsuario {
 		this.tiempoDisponible = tiempoDisponible;
 	}
 
-	public PromocionType getTipoDeAtraccion() {
+	public TiposDeAtraccion getTipoDeAtraccion() {
 		return tipoDeAtraccion;
 	}
 
-	public void setTipoDeAtraccion(PromocionType tipoDeAtraccion) {
+	public void setTipoDeAtraccion(TiposDeAtraccion tipoDeAtraccion) {
 		this.tipoDeAtraccion = tipoDeAtraccion;
 	}
 	
