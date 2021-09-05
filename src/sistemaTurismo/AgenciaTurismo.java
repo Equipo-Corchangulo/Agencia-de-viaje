@@ -1,6 +1,5 @@
 package sistemaTurismo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 enum TiposDeAtraccion {

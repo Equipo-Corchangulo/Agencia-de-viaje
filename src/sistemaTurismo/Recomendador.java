@@ -44,7 +44,8 @@ public class Recomendador {
 	public boolean leer()
     {
 		//si el usuario ingresa 1 es verdadero sino no.
-        java.util.Scanner teclado = new java.util.Scanner(System.in);
+        @SuppressWarnings("resource")
+		java.util.Scanner teclado = new java.util.Scanner(System.in);
         
         return teclado.nextInt() == 1;
     }
@@ -64,7 +65,7 @@ public class Recomendador {
 			List<Facturable> atraccioneNoRecomendadas = filtarPorTipo(usuario.getTipoDeAtraccion(), true, false);
 			
 			List <Facturable> promocionesRecomendadas = filtarPorTipo(usuario.getTipoDeAtraccion(), false, true);
-			List <Facturable> promocionesNoRecomendadas = filtarPorTipo(usuario.getTipoDeAtraccion(), true, true);
+			//List <Facturable> promocionesNoRecomendadas = filtarPorTipo(usuario.getTipoDeAtraccion(), true, true);
 
 			iterarSugerencias(promocionesRecomendadas, usuario, nuevoItinerario);
 			//recorremos las atracciones para ver que le podemos recomendar
