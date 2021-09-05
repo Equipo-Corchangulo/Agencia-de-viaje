@@ -12,13 +12,13 @@ public class PromoAbsoluta extends Promocion {
 	}
 
 	@Override
-	public double obtenerCostoTotatl() {
+	public double obtenerCostoTotal() {
 		return costoFijo;
 	}
 
 	@Override
-	public int obtenerTiempoTotal() {
-		int tiempoTotal = 0;
+	public double obtenerTiempoTotal() {
+		double tiempoTotal = 0;
 		for(Facturable atraccion : listaDeAtracciones){
 			tiempoTotal+= atraccion.obtenerTiempoTotal();
 		}
@@ -45,6 +45,6 @@ public class PromoAbsoluta extends Promocion {
 	@Override
 	public TiposDeAtraccion getTipo() {
 		
-		return this.tipoDePromocion;	
+		return this.tipoDeAtraccion;
 	}
 }

@@ -1,1 +1,3 @@
-0,AVENTURA,Pack aventura,0-1,3
+ABSOLUTA,AVENTURA,Pack aventura,0-1,3
+AXB,DEGUSTACION,Pack et,2,0
+PORCENTUAL,AVENTURA, Pack montaña,0-1,0.15

@@ -81,7 +81,7 @@ public class Recomendador {
 				return;
 			}
 			//si el usuario tiene dinero y tiempo se lo recomendamos y si la atraccion tiene cupo.
-			if(usuario.getPresupuesto() >= atraccion.obtenerCostoTotatl() 
+			if(usuario.getPresupuesto() >= atraccion.obtenerCostoTotal()
 					&& usuario.getTiempoDisponible() >= atraccion.obtenerTiempoTotal()
 					&& atraccion.hayCupo()) {
 		

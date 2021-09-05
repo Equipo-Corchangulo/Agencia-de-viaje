@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Itinerario {
 
-	private float horasNecesarias;
+	private double horasNecesarias;
 	private double costoMonedas;
 	private List<Facturable> ListaDeVisitas = new ArrayList<Facturable>();
 
-	public float getHorasNecesarias() {
+	public double getHorasNecesarias() {
 		return horasNecesarias;
 	}
 
@@ -25,7 +25,7 @@ public class Itinerario {
 	public void agregarAtraccion(Facturable atraccion) {
 		this.ListaDeVisitas.add(atraccion);
 		horasNecesarias += atraccion.obtenerTiempoTotal();
-		costoMonedas += atraccion.obtenerCostoTotatl();
+		costoMonedas += atraccion.obtenerCostoTotal();
 	}
 	
 	

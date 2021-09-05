@@ -4,48 +4,53 @@ import java.util.List;
 
 public class PromoAxB extends Promocion {
 
-	public String atracionExtra;
+	public Facturable atracionExtra;
 
-	public PromoAxB(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion, String nombreDePromocion, String atracionExtra) {
+	public PromoAxB(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion
+			, String nombreDePromocion, Facturable atracionExtra) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
 		this.atracionExtra = atracionExtra;
 	}
 
-	public String getAtracionExtra() {
-		return atracionExtra;
-	}
-
-	public void setAtracionExtra(String atracionExtra) {
-		this.atracionExtra = atracionExtra;
+	@Override
+	public double obtenerCostoTotal() {
+		double costoTotal = 0;
+		for (Facturable atraccion : listaDeAtracciones) {
+			costoTotal += atraccion.obtenerCostoTotal();
+		}
+		return costoTotal;
 	}
 
 	@Override
-	public double obtenerCostoTotatl() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int obtenerTiempoTotal() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double obtenerTiempoTotal() {
+		double tiempoTotal = 0;
+		for (Facturable atraccion : listaDeAtracciones) {
+			tiempoTotal += atraccion.obtenerTiempoTotal();
+		}
+		tiempoTotal += atracionExtra.obtenerTiempoTotal();
+		return tiempoTotal;
 	}
 
 	@Override
 	public boolean hayCupo() {
-		// TODO Auto-generated method stub
-		return false;
+		for (Facturable atraccion : listaDeAtracciones) {
+			if(!atraccion.hayCupo()){
+				return false;
+			}
+		}
+		return atracionExtra.hayCupo();
 	}
 
 	@Override
 	public void restarCupo() {
-		// TODO Auto-generated method stub
-		
+		for (Facturable atraccion : listaDeAtracciones) {
+			atraccion.restarCupo();
+		}
+		atracionExtra.restarCupo();
 	}
 
 	@Override
 	public TiposDeAtraccion getTipo() {
-		
-		return this.tipoDePromocion;
+		return this.tipoDeAtraccion;
 	}
 }

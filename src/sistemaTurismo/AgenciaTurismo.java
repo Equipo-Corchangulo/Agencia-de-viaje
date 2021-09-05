@@ -13,6 +13,7 @@ public class AgenciaTurismo {
 	static List<Facturable> atracciones;
 public static void main(String[] args) {
 	AgenciaTurismo.atracciones = ManejadorDeArchivo.obtenerFacturables(false);
+
 	
 	List<PerfilUsuario> usuarios = ManejadorDeArchivo.obtenerUsuario();
 	List<Facturable> promociones = ManejadorDeArchivo.obtenerFacturables(true);

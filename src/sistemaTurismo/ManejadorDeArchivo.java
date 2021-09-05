@@ -3,6 +3,7 @@ package sistemaTurismo;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
 public class ManejadorDeArchivo {
 
 	//funcion para obtener Facturables ( promociones o Atracciones)
@@ -54,7 +55,7 @@ public class ManejadorDeArchivo {
 
 	private static Promocion crearPromocion(String[] promocionBase){
 		//obtenemos el tipo de promocion lo que nos va a permitir saber que clase vamos a instanciar
-		int tipoPromocion = Integer.parseInt(promocionBase[0]);
+		Promocion.enumDePromocion tipoPromocion = Promocion.enumDePromocion.valueOf(promocionBase[0]);
 
 		//guardamos el tipo de atracciones que contendrá este paquete
 		TiposDeAtraccion tipoDePromocion = TiposDeAtraccion.valueOf(promocionBase[1]);
@@ -76,15 +77,16 @@ public class ManejadorDeArchivo {
 
 		//dependiendo del tipo de promocion utilizamos una clase distinta y pedimos un dato distinto
 		switch (tipoPromocion){
-			case 0:
-				double costofijo = Double.parseDouble(promocionBase[4]);
-				nuevaPromocion = new PromoAbsoluta(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,costofijo);
+			case ABSOLUTA:
+				double costoFijo = Double.parseDouble(promocionBase[4]);
+				nuevaPromocion = new PromoAbsoluta(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,costoFijo);
 				break;
-			case 1:
-				String promoExtra = promocionBase[4];
-				nuevaPromocion = new PromoAxB(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,promoExtra);
+			case AXB:
+				int indiceDeAtraccionExtra = Integer.parseInt(promocionBase[4]);
+				 Facturable atraccionExtra = AgenciaTurismo.atracciones.get(indiceDeAtraccionExtra);
+				nuevaPromocion = new PromoAxB(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,atraccionExtra);
 				break;
-			case 2:
+			case PORCENTUAL:
 				double porcentajeDescuento = Double.parseDouble(promocionBase[4]);
 				nuevaPromocion = new PromoPorcentual(listaDeAtracciones, tipoDePromocion, nombreDePromocuon, porcentajeDescuento);
 				break;
@@ -102,7 +104,7 @@ public class ManejadorDeArchivo {
 		// 3 = tipo de atraccion o paquete
 		// 4 = nombre de la atraccion
 		double costoVisita = Double.parseDouble(atraccionBase[0]);
-		int tiempoPromedio = Integer.parseInt(atraccionBase[1]);
+		double tiempoPromedio = Double.parseDouble(atraccionBase[1]);
 		int cupoDiario = Integer.parseInt(atraccionBase[2]);
 		TiposDeAtraccion tipoAtraccion = TiposDeAtraccion.valueOf(atraccionBase[3]);
 		String nombre = atraccionBase[4];

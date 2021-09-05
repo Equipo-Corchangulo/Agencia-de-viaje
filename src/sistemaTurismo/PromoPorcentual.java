@@ -7,7 +7,8 @@ public class PromoPorcentual extends Promocion {
 	
 	private double porcentajeDescuento;
 
-	public PromoPorcentual(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion, String nombreDePromocion, double porcentajeDescuento) {
+	public PromoPorcentual(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion
+			, String nombreDePromocion, double porcentajeDescuento) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
 		this.porcentajeDescuento = porcentajeDescuento;
 	}
@@ -17,33 +18,44 @@ public class PromoPorcentual extends Promocion {
 	}
 
 	@Override
-	public double obtenerCostoTotatl() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double obtenerCostoTotal() {
+		double costoTotal = 0;
+		for (Facturable atraccion : listaDeAtracciones) {
+			costoTotal += atraccion.obtenerCostoTotal();
+		}
+		costoTotal -= costoTotal * porcentajeDescuento;
+		return costoTotal;
 	}
 
 	@Override
-	public int obtenerTiempoTotal() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double obtenerTiempoTotal() {
+		double tiempoTotal = 0;
+		for (Facturable atraccion : listaDeAtracciones) {
+			tiempoTotal += atraccion.obtenerTiempoTotal();
+		}
+		return tiempoTotal;
 	}
 
 	@Override
 	public boolean hayCupo() {
-		// TODO Auto-generated method stub
-		return false;
+			for (Facturable atraccion : listaDeAtracciones) {
+				if (!atraccion.hayCupo())
+					return false;
+			}
+			return true;
 	}
 
 	@Override
 	public void restarCupo() {
-		// TODO Auto-generated method stub
-		
+		for(Facturable atraccion : listaDeAtracciones){
+			atraccion.restarCupo();
+		}
 	}
 
 	@Override
 	public TiposDeAtraccion getTipo() {
 		
-		 return this.tipoDePromocion;
+		 return this.tipoDeAtraccion;
 		
 	}
 	

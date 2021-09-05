@@ -3,16 +3,21 @@ package sistemaTurismo;
 import java.util.List;
 
 public abstract class Promocion  implements Facturable {
+	public enum enumDePromocion {
+		ABSOLUTA,
+		AXB,
+		PORCENTUAL;
+	}
 
 	public List<Facturable> listaDeAtracciones;
 	
-	public TiposDeAtraccion tipoDePromocion;
+	public TiposDeAtraccion tipoDeAtraccion;
 	
 	public String nombreDePromocion;
 
-	public Promocion(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion, String nombreDePromocion) {
+	public Promocion(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDeAtraccion, String nombreDePromocion) {
 		this.listaDeAtracciones = listaDeAtracciones;
-		this.tipoDePromocion = tipoDePromocion;
+		this.tipoDeAtraccion = tipoDeAtraccion;
 		this.nombreDePromocion = nombreDePromocion;
 	}
 
@@ -20,7 +25,7 @@ public abstract class Promocion  implements Facturable {
 	public String toString() {
 		return "promocion: "+ this.nombreDePromocion
 				+ " del tipo: " + this.getTipo()
-				+ " costo: " + this.obtenerCostoTotatl()
+				+ " costo: " + this.obtenerCostoTotal()
 				+ " Tiempo requerido: " + this.obtenerTiempoTotal();
 	}
 }

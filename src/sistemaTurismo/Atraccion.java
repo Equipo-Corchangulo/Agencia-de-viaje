@@ -3,12 +3,12 @@ package sistemaTurismo;
 public class Atraccion implements Facturable {
 
 	private double costoVisita;
-	private int tiempoPromedio;
+	private double tiempoPromedio;
 	private int cupoDiario;
 	private String nombre;
 	private TiposDeAtraccion tipoAtraccion;
 	
-	public Atraccion(double costoVisita, int tiempoPromedio, int cupoDiario, TiposDeAtraccion tipoAtraccion, String nombre) {
+	public Atraccion(double costoVisita, double tiempoPromedio, int cupoDiario, TiposDeAtraccion tipoAtraccion, String nombre) {
 		super();
 		this.costoVisita = costoVisita;
 		this.tiempoPromedio = tiempoPromedio;
@@ -25,13 +25,13 @@ public class Atraccion implements Facturable {
 	}
 
 	@Override
-	public double obtenerCostoTotatl() {
+	public double obtenerCostoTotal() {
 	
 		return this.costoVisita;
 	}
 
 	@Override
-	public int obtenerTiempoTotal() {
+	public double obtenerTiempoTotal() {
 	
 		return  this.tiempoPromedio;
 	}

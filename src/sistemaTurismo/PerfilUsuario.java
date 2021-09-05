@@ -5,7 +5,7 @@ public class PerfilUsuario {
 
 	private double presupuesto;
 
-	private int tiempoDisponible;
+	private double tiempoDisponible;
 	private String nombre;
 	private TiposDeAtraccion tipoDeAtraccion;
 	
@@ -31,11 +31,11 @@ public class PerfilUsuario {
 		this.presupuesto = presupuesto;
 	}
 
-	public int getTiempoDisponible() {
+	public double getTiempoDisponible() {
 		return tiempoDisponible;
 	}
 
-	public void setTiempoDisponible(int tiempoDisponible) {
+	public void setTiempoDisponible(double tiempoDisponible) {
 		this.tiempoDisponible = tiempoDisponible;
 	}
 
@@ -57,7 +57,7 @@ public class PerfilUsuario {
 	
 	public void reservarTiempoYdinero(Facturable atraccion) {
 		this.tiempoDisponible -= atraccion.obtenerTiempoTotal();
-		this.presupuesto -= atraccion.obtenerCostoTotatl();
+		this.presupuesto -= atraccion.obtenerCostoTotal();
 	}
 	
 	public boolean tieneTiempoYdinero() {
