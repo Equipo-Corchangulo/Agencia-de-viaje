@@ -2,12 +2,6 @@ package sistemaTurismo;
 
 import java.util.List;
 
-enum TipoDeAtraccion {
-    AVENTURA,
-    DEGUSTACION,
-    PAISAJE;
-}
-
 public class AgenciaTurismo {
 	static List<Facturable> atracciones;
 public static void main(String[] args) {
