@@ -53,9 +53,9 @@ public class Recomendador {
 	public void ofrecerSugerencias() {
 		
 		for(PerfilUsuario usuario : listaDeUsuarios) {
-			//decimos a que usuario estamos recomendandole
+			//decimos a qué usuario estamos recomendandole
 			System.out.println("Recomendaciones para usuario : "+ usuario.getNombre());
-			System.out.println("Precione 1 para aceptar y 0 para cancelar");
+			System.out.println("Presione 1 para aceptar y 0 para cancelar");
 			
 			//creamos el itinerario de este usuario
 			Itinerario nuevoItinerario = new Itinerario();
