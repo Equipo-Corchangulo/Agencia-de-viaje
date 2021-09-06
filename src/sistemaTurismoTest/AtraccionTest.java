@@ -8,14 +8,14 @@ import sistemaTurismo.Atraccion;
 
 
 public class AtraccionTest {
-	Atraccion atraccionMoria = new Atraccion(10, 2, 6, null, "Aventura");
-	Atraccion atraccionMinasTirith = new Atraccion(5, 2.5, 25, null, "Paisaje");
-	Atraccion atraccionLaComarca = new Atraccion(3, 6.5, 150, null, "Degustacion");
-	Atraccion atraccionMordor = new Atraccion(25, 3, 4, null, "Aventura");
-	Atraccion atraccionAbismoDeHelm = new Atraccion(5, 2, 15, null, "Paisaje");
-	Atraccion atraccionLothlorien = new Atraccion(35, 1, 30, null, "Degustacion");
-	Atraccion atraccionErebor = new Atraccion(12, 3, 32, null, "Paisaje");
-	Atraccion atraccionBosqueNegro = new Atraccion(3, 4, 12, null, "Aventura");
+	Atraccion atraccionMoria = new Atraccion("Aventura", 10, 2, 6, null);
+	Atraccion atraccionMinasTirith = new Atraccion("Paisaje", 5, 2.5, 25, null);
+	Atraccion atraccionLaComarca = new Atraccion("Degustacion", 3, 6.5, 150, null);
+	Atraccion atraccionMordor = new Atraccion("Aventura", 25, 3, 4, null);
+	Atraccion atraccionAbismoDeHelm = new Atraccion("Paisaje", 5, 2, 15, null);
+	Atraccion atraccionLothlorien = new Atraccion("Degustacion", 35, 1, 30, null);
+	Atraccion atraccionErebor = new Atraccion("Paisaje", 12, 3, 32, null);
+	Atraccion atraccionBosqueNegro = new Atraccion("Aventura", 3, 4, 12, null);
 
 
 	@Test
