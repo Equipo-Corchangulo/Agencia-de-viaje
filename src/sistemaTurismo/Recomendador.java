@@ -21,7 +21,7 @@ public class Recomendador {
 		this.listaDeItinerarios = new ArrayList<Itinerario>();
 	}
 	
-	public List<Facturable> filtarPorTipo(TiposDeAtraccion tipo, boolean excluir, boolean filtrarPromocion) {
+	public List<Facturable> filtarPorTipo(TipoDeAtraccion tipo, boolean excluir, boolean filtrarPromocion) {
 		List<Facturable> listaFiltrada = new ArrayList<Facturable>();
 		List<Facturable> listaAFiltrar = filtrarPromocion ? listaDePromociones : listaDeAtracciones;
 		

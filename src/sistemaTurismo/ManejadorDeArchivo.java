@@ -58,7 +58,7 @@ public class ManejadorDeArchivo {
 		Promocion.enumDePromocion tipoPromocion = Promocion.enumDePromocion.valueOf(promocionBase[0]);
 
 		//guardamos el tipo de atracciones que contendrá este paquete
-		TiposDeAtraccion tipoDePromocion = TiposDeAtraccion.valueOf(promocionBase[1]);
+		TipoDeAtraccion tipoDePromocion = TipoDeAtraccion.valueOf(promocionBase[1]);
 
 		// guardamos el nombre del paquete (vamos a usar esto en el toString para mostrar mas info al usuario por consola)
 		String nombreDePromocuon = promocionBase[2];
@@ -106,7 +106,7 @@ public class ManejadorDeArchivo {
 		double costoVisita = Double.parseDouble(atraccionBase[0]);
 		double tiempoPromedio = Double.parseDouble(atraccionBase[1]);
 		int cupoDiario = Integer.parseInt(atraccionBase[2]);
-		TiposDeAtraccion tipoAtraccion = TiposDeAtraccion.valueOf(atraccionBase[3]);
+		TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(atraccionBase[3]);
 		String nombre = atraccionBase[4];
 
 		//creamos una nueva atraccion utilizando el constructor y los valores obtenidos del archivo
@@ -131,7 +131,7 @@ public class ManejadorDeArchivo {
 					String [] usuarioBase = linea.split(",");
 					double presupuesto = Double.parseDouble(usuarioBase[0]);
 					int tiempoDisponible = Integer.parseInt(usuarioBase[1]);
-					TiposDeAtraccion tipoAtraccion = TiposDeAtraccion.valueOf(usuarioBase[2]);
+					TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(usuarioBase[2]);
 					String nombre = usuarioBase[3];
 					
 					

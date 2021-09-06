@@ -2,7 +2,7 @@ package sistemaTurismo;
 
 import java.util.List;
 
-enum TiposDeAtraccion {
+enum TipoDeAtraccion {
     AVENTURA,
     DEGUSTACION,
     PAISAJE;

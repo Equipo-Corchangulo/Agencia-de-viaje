@@ -6,7 +6,7 @@ public class PromoAxB extends Promocion {
 
 	public Facturable atracionExtra;
 
-	public PromoAxB(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion
+	public PromoAxB(List<Facturable> listaDeAtracciones, TipoDeAtraccion tipoDePromocion
 			, String nombreDePromocion, Facturable atracionExtra) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
 		this.atracionExtra = atracionExtra;
@@ -50,7 +50,7 @@ public class PromoAxB extends Promocion {
 	}
 
 	@Override
-	public TiposDeAtraccion getTipo() {
+	public TipoDeAtraccion getTipo() {
 		return this.tipoDeAtraccion;
 	}
 }

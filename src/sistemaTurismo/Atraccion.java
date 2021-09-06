@@ -6,9 +6,9 @@ public class Atraccion implements Facturable {
 	private double tiempoPromedio;
 	private int cupoDiario;
 	private String nombre;
-	private TiposDeAtraccion tipoAtraccion;
+	private TipoDeAtraccion tipoAtraccion;
 	
-	public Atraccion(double costoVisita, double tiempoPromedio, int cupoDiario, TiposDeAtraccion tipoAtraccion, String nombre) {
+	public Atraccion(double costoVisita, double tiempoPromedio, int cupoDiario, TipoDeAtraccion tipoAtraccion, String nombre) {
 		super();
 		this.costoVisita = costoVisita;
 		this.tiempoPromedio = tiempoPromedio;
@@ -52,7 +52,7 @@ public class Atraccion implements Facturable {
 		return this.cupoDiario;
 	}
 	@Override
-	public TiposDeAtraccion getTipo() {
+	public TipoDeAtraccion getTipo() {
 	
 		return this.tipoAtraccion;
 		

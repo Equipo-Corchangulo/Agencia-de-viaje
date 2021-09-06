@@ -7,7 +7,7 @@ public class PromoPorcentual extends Promocion {
 	
 	private double porcentajeDescuento;
 
-	public PromoPorcentual(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDePromocion
+	public PromoPorcentual(List<Facturable> listaDeAtracciones, TipoDeAtraccion tipoDePromocion
 			, String nombreDePromocion, double porcentajeDescuento) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
 		this.porcentajeDescuento = porcentajeDescuento;
@@ -53,7 +53,7 @@ public class PromoPorcentual extends Promocion {
 	}
 
 	@Override
-	public TiposDeAtraccion getTipo() {
+	public TipoDeAtraccion getTipo() {
 		
 		 return this.tipoDeAtraccion;
 		

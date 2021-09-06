@@ -11,11 +11,11 @@ public abstract class Promocion  implements Facturable {
 
 	public List<Facturable> listaDeAtracciones;
 	
-	public TiposDeAtraccion tipoDeAtraccion;
+	public TipoDeAtraccion tipoDeAtraccion;
 	
 	public String nombreDePromocion;
 
-	public Promocion(List<Facturable> listaDeAtracciones, TiposDeAtraccion tipoDeAtraccion, String nombreDePromocion) {
+	public Promocion(List<Facturable> listaDeAtracciones, TipoDeAtraccion tipoDeAtraccion, String nombreDePromocion) {
 		this.listaDeAtracciones = listaDeAtracciones;
 		this.tipoDeAtraccion = tipoDeAtraccion;
 		this.nombreDePromocion = nombreDePromocion;
