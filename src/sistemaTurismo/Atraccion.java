@@ -8,13 +8,13 @@ public class Atraccion implements Facturable {
 	private String nombre;
 	private TipoDeAtraccion tipoAtraccion;
 	
-	public Atraccion(double costoVisita, double tiempoPromedio, int cupoDiario, TipoDeAtraccion tipoAtraccion, String nombre) {
+	public Atraccion(String nombre, double costoVisita, double tiempoPromedio, int cupoDiario, TipoDeAtraccion tipoAtraccion) {
 		super();
+		this.nombre = nombre;
 		this.costoVisita = costoVisita;
 		this.tiempoPromedio = tiempoPromedio;
 		this.cupoDiario = cupoDiario;
 		this.tipoAtraccion = tipoAtraccion;
-		this.nombre = nombre;
 	}
 
 	@Override
