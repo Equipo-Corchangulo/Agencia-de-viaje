@@ -2,7 +2,6 @@ package sistemaTurismo;
 
 public class PerfilUsuario {
 
-
 	private double presupuesto;
 
 	private double tiempoDisponible;
@@ -24,36 +23,25 @@ public class PerfilUsuario {
 	}
 
 	public double getPresupuesto() {
+
 		return presupuesto;
 	}
 
-	public void setPresupuesto(double presupuesto) {
-		this.presupuesto = presupuesto;
-	}
-
 	public double getTiempoDisponible() {
+
 		return tiempoDisponible;
 	}
 
-	public void setTiempoDisponible(double tiempoDisponible) {
-		this.tiempoDisponible = tiempoDisponible;
-	}
-
 	public TipoDeAtraccion getTipoDeAtraccion() {
-		return tipoDeAtraccion;
-	}
 
-	public void setTipoDeAtraccion(TipoDeAtraccion tipoDeAtraccion) {
-		this.tipoDeAtraccion = tipoDeAtraccion;
+		return tipoDeAtraccion;
 	}
 	
 	public String getNombre() {
+
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 	
 	public void reservarTiempoYdinero(Facturable atraccion) {
 		this.tiempoDisponible -= atraccion.obtenerTiempoTotal();
@@ -61,6 +49,7 @@ public class PerfilUsuario {
 	}
 	
 	public boolean tieneTiempoYdinero() {
+
 		return this.tiempoDisponible > 0 && this.presupuesto > 0 ;
 	}
 }
