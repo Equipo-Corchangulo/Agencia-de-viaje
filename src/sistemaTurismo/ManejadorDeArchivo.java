@@ -98,19 +98,19 @@ public class ManejadorDeArchivo {
 
 	private static Atraccion crearAtraccion(String[] atraccionBase){
 		//inicializamos todos los valores conocidos de una atraccion
-		// 0 = a costo de la visita
-		// 1 = tiempo ¨promedio de  visita
-		// 2 = cupo diario por atraccion
-		// 3 = tipo de atraccion o paquete
-		// 4 = nombre de la atraccion
-		double costoVisita = Double.parseDouble(atraccionBase[0]);
-		double tiempoPromedio = Double.parseDouble(atraccionBase[1]);
-		int cupoDiario = Integer.parseInt(atraccionBase[2]);
-		TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(atraccionBase[3]);
-		String nombre = atraccionBase[4];
-
+		// 0 = nombre de la atraccion
+		// 1 = a costo de la visita
+		// 2 = tiempo ¨promedio de  visita
+		// 3 = cupo diario por atraccion
+		// 4 = tipo de atraccion o paquete
+		String nombre = atraccionBase[0];
+		double costoVisita = Double.parseDouble(atraccionBase[1]);
+		double tiempoPromedio = Double.parseDouble(atraccionBase[2]);
+		int cupoDiario = Integer.parseInt(atraccionBase[3]);
+		TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(atraccionBase[4]);
+		
 		//creamos una nueva atraccion utilizando el constructor y los valores obtenidos del archivo
-		Atraccion nuevaAtraccion = new Atraccion(costoVisita,tiempoPromedio,cupoDiario,tipoAtraccion,nombre);
+		Atraccion nuevaAtraccion = new Atraccion(nombre, costoVisita,tiempoPromedio,cupoDiario,tipoAtraccion);
 
 		//devolvemos la atraccion creada
 		return nuevaAtraccion;
@@ -129,13 +129,13 @@ public class ManejadorDeArchivo {
 			while ((linea = br.readLine())!= null) {
 				try {
 					String [] usuarioBase = linea.split(",");
-					double presupuesto = Double.parseDouble(usuarioBase[0]);
-					int tiempoDisponible = Integer.parseInt(usuarioBase[1]);
-					TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(usuarioBase[2]);
-					String nombre = usuarioBase[3];
+					String nombre = usuarioBase[0];
+					double presupuesto = Double.parseDouble(usuarioBase[1]);
+					int tiempoDisponible = Integer.parseInt(usuarioBase[2]);
+					TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(usuarioBase[3]);
+										
 					
-					
-					PerfilUsuario nuevoUsuario = new PerfilUsuario(presupuesto, tiempoDisponible, tipoAtraccion, nombre);
+					PerfilUsuario nuevoUsuario = new PerfilUsuario(nombre, presupuesto, tiempoDisponible, tipoAtraccion);
 					listaDePerfilUsuario.add(nuevoUsuario);
 					
 					
