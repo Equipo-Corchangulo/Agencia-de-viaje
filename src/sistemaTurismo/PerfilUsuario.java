@@ -8,11 +8,11 @@ public class PerfilUsuario {
 	private String nombre;
 	private TipoDeAtraccion tipoDeAtraccion;
 	
-	public PerfilUsuario(double presupuesto, int tiempoDisponible, TipoDeAtraccion tipoDeAtraccion, String nombre) {
+	public PerfilUsuario(String nombre, double presupuesto, int tiempoDisponible, TipoDeAtraccion tipoDeAtraccion) {
+		this.nombre = nombre;
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.tipoDeAtraccion = tipoDeAtraccion;
-		this.nombre = nombre;
 	}
 
 	
