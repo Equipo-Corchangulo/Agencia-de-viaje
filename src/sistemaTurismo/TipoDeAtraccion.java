@@ -2,7 +2,7 @@ package sistemaTurismo;
 
 public enum TipoDeAtraccion {
 
-	AVENTURA,
+    AVENTURA,
     DEGUSTACION,
     PAISAJE;
 }
