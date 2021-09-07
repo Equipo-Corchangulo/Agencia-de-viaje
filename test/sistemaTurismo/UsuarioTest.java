@@ -1,4 +1,4 @@
-package sistemaTurismoTest;
+package sistemaTurismo;
 
 import static org.junit.Assert.*;
 
