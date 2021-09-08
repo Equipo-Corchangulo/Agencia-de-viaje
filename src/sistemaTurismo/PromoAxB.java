@@ -13,44 +13,21 @@ public class PromoAxB extends Promocion {
 	}
 
 	@Override
-	public double obtenerCostoTotal() {
-		double costoTotal = 0;
-		for (Facturable atraccion : listaDeAtracciones) {
-			costoTotal += atraccion.obtenerCostoTotal();
-		}
-		return costoTotal;
-	}
-
-	@Override
 	public double obtenerTiempoTotal() {
-		double tiempoTotal = 0;
-		for (Facturable atraccion : listaDeAtracciones) {
-			tiempoTotal += atraccion.obtenerTiempoTotal();
-		}
+		double tiempoTotal = super.obtenerTiempoTotal();
 		tiempoTotal += atracionExtra.obtenerTiempoTotal();
 		return tiempoTotal;
 	}
 
 	@Override
 	public boolean hayCupo() {
-		for (Facturable atraccion : listaDeAtracciones) {
-			if(!atraccion.hayCupo()){
-				return false;
-			}
-		}
-		return atracionExtra.hayCupo();
+		boolean hayCupo = super.hayCupo();
+		return hayCupo && atracionExtra.hayCupo();
 	}
 
 	@Override
 	public void restarCupo() {
-		for (Facturable atraccion : listaDeAtracciones) {
-			atraccion.restarCupo();
-		}
+		super.restarCupo();
 		atracionExtra.restarCupo();
-	}
-
-	@Override
-	public TipoDeAtraccion getTipo() {
-		return this.tipoDeAtraccion;
 	}
 }

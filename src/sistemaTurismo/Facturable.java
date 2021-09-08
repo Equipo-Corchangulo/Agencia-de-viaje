@@ -1,6 +1,6 @@
 package sistemaTurismo;
 
-public interface Facturable {
+public interface Facturable extends Comparable<Facturable> {
 
 	 double obtenerCostoTotal();
 	
@@ -9,6 +9,8 @@ public interface Facturable {
 	 boolean hayCupo();
 	
 	 void restarCupo();
+
+	 boolean esPromocion();
 	
 	 TipoDeAtraccion getTipo();
 	

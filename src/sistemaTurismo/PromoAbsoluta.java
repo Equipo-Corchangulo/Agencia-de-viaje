@@ -16,35 +16,6 @@ public class PromoAbsoluta extends Promocion {
 		return costoFijo;
 	}
 
-	@Override
-	public double obtenerTiempoTotal() {
-		double tiempoTotal = 0;
-		for(Facturable atraccion : listaDeAtracciones){
-			tiempoTotal+= atraccion.obtenerTiempoTotal();
-		}
-		return tiempoTotal;
-	}
 
-	@Override
-	public boolean hayCupo() {
-		for(Facturable atraccion : listaDeAtracciones){
-			if(!atraccion.hayCupo())
-				return false;
-		}
-		return true;
-	}
 
-	@Override
-	public void restarCupo() {
-		for(Facturable atraccion : listaDeAtracciones){
-			atraccion.restarCupo();
-		}
-		
-	}
-
-	@Override
-	public TipoDeAtraccion getTipo() {
-		
-		return this.tipoDeAtraccion;
-	}
 }

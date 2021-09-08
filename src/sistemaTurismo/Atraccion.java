@@ -59,5 +59,12 @@ public class Atraccion implements Facturable {
 	}
 
 
-	
+	@Override
+	public int compareTo(Facturable o) {
+		return o.esPromocion() ? -1 : 0;
+	}
+	@Override
+	public  boolean esPromocion(){
+		return false;
+	}
 }
