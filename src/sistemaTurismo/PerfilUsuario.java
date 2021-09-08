@@ -52,4 +52,9 @@ public class PerfilUsuario {
 
 		return this.tiempoDisponible > 0 && this.presupuesto > 0 ;
 	}
+	
+	public boolean puedeComprar(Facturable atraccion) {
+		return atraccion.obtenerCostoTotal() <= this.presupuesto 
+				&& atraccion.obtenerTiempoTotal() <= this.tiempoDisponible;
+	}
 }
