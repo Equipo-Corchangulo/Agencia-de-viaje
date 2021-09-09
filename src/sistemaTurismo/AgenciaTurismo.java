@@ -4,19 +4,17 @@ import java.util.List;
 
 public class AgenciaTurismo {
 
-	static List<Facturable> atracciones;
+	static List<Facturable> facturables;
 
 	public static void main(String[] args) {
 
-	AgenciaTurismo.atracciones = ManejadorDeArchivo.obtenerFacturables(false);
+	AgenciaTurismo.facturables = ManejadorDeArchivo.obtenerFacturables();
 
 	List<PerfilUsuario> usuarios = ManejadorDeArchivo.obtenerUsuario();
-	List<Facturable> promociones = ManejadorDeArchivo.obtenerFacturables(true);
 
-	Recomendador recomendar = new Recomendador(usuarios, atracciones, promociones);
+	Recomendador recomendar = new Recomendador(usuarios, facturables);
 	recomendar.ofrecerSugerencias();
-
-	System.out.println(((Atraccion) atracciones.get(0)).getCupo());
+	System.out.println("Programa Terminado");
 	}
 
 }

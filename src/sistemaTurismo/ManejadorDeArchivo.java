@@ -1,20 +1,27 @@
 package sistemaTurismo;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ManejadorDeArchivo {
 
-	public static List<Facturable> obtenerFacturables(boolean esPromocion) {
+	public static List<Facturable> obtenerFacturables() {
 		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
+
+		AgenciaTurismo.facturables = leerArchivos("Files/Atracciones.txt", false, listaDeAtracciones);
+		leerArchivos("files/Promociones.txt", true, AgenciaTurismo.facturables);	
+		return listaDeAtracciones;
+	}
+	
+	private static List<Facturable> leerArchivos(String nombreDeArchivo
+			, boolean esPromocion
+			, List<Facturable> listaDeAtracciones){
 
 		FileReader fr = null;
 		BufferedReader br = null;
 
-		String archivo = esPromocion ? "files/Promociones.txt" : "files/Atracciones.txt";
 		try {
-			fr = new FileReader(archivo);
+			fr = new FileReader(nombreDeArchivo);
 			br = new BufferedReader(fr);
 			String linea;
 			while ((linea = br.readLine())!= null) {
@@ -33,7 +40,6 @@ public class ManejadorDeArchivo {
 
 		return listaDeAtracciones;
 	}
-
 	private static Promocion crearPromocion(String[] promocionBase){
 	
 		Promocion.enumDePromocion tipoPromocion = Promocion.enumDePromocion.valueOf(promocionBase[0]);
@@ -43,7 +49,7 @@ public class ManejadorDeArchivo {
 		String[] indicesAtracciones = promocionBase[3].split("-");
 
 		for (String indice : indicesAtracciones) {
-			listaDeAtracciones.add(AgenciaTurismo.atracciones.get(Integer.parseInt(indice)));
+			listaDeAtracciones.add(AgenciaTurismo.facturables.get(Integer.parseInt(indice))); 
 		}
 
 		Promocion nuevaPromocion;
@@ -54,7 +60,7 @@ public class ManejadorDeArchivo {
 				break;
 			case AXB:
 				int indiceDeAtraccionExtra = Integer.parseInt(promocionBase[4]);
-				 Facturable atraccionExtra = AgenciaTurismo.atracciones.get(indiceDeAtraccionExtra);
+				 Facturable atraccionExtra = AgenciaTurismo.facturables.get(indiceDeAtraccionExtra);
 				nuevaPromocion = new PromoAxB(listaDeAtracciones, tipoDePromocion, nombreDePromocion,atraccionExtra);
 				break;
 			case PORCENTUAL:

@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import sistemaTurismo.Atraccion;
-
 
 public class AtraccionTest {
     Atraccion atraccionMoria = new Atraccion("Aventura", 10, 2, 6, null);
@@ -83,5 +81,13 @@ public class AtraccionTest {
 
 
     }
+
+
+
+
+
+
+
+
 
 }
