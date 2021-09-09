@@ -4,31 +4,31 @@ import java.util.List;
 
 public class PromoAxB extends Promocion {
 
-	public Facturable atracionExtra;
+	public Facturable atraccionExtra;
 
 	public PromoAxB(List<Facturable> listaDeAtracciones, TipoDeAtraccion tipoDePromocion
-			, String nombreDePromocion, Facturable atracionExtra) {
+			, String nombreDePromocion, Facturable atraccionExtra) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
-		this.atracionExtra = atracionExtra;
+		this.atraccionExtra = atraccionExtra;
 	}
 
 	@Override
 	public double obtenerTiempoTotal() {
 		double tiempoTotal = super.obtenerTiempoTotal();
-		tiempoTotal += atracionExtra.obtenerTiempoTotal();
+		tiempoTotal += atraccionExtra.obtenerTiempoTotal();
 		return tiempoTotal;
 	}
 
 	@Override
 	public boolean hayCupo() {
 		boolean hayCupo = super.hayCupo();
-		return hayCupo && atracionExtra.hayCupo();
+		return hayCupo && atraccionExtra.hayCupo();
 	}
 
 	@Override
 	public void restarCupo() {
 		super.restarCupo();
-		atracionExtra.restarCupo();
+		atraccionExtra.restarCupo();
 	}
 	
 }
