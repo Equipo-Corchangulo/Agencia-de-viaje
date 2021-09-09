@@ -10,9 +10,9 @@ public abstract class Promocion  implements Facturable {
 	}
 
 	public List<Facturable> listaDeAtracciones;
-	
+
 	public TipoDeAtraccion tipoDeAtraccion;
-	
+
 	public String nombreDePromocion;
 
 	public Promocion(List<Facturable> listaDeAtracciones, TipoDeAtraccion tipoDeAtraccion, String nombreDePromocion) {
@@ -61,6 +61,7 @@ public abstract class Promocion  implements Facturable {
 			tiempoTotal+= atraccion.obtenerTiempoTotal();
 		}
 		return tiempoTotal;
+
 	}
 	@Override
 	public TipoDeAtraccion getTipo() {
@@ -77,4 +78,5 @@ public abstract class Promocion  implements Facturable {
 		}
 		return costoTotal;
 	}
+
 }

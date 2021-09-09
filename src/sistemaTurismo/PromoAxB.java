@@ -30,4 +30,5 @@ public class PromoAxB extends Promocion {
 		super.restarCupo();
 		atracionExtra.restarCupo();
 	}
+	
 }

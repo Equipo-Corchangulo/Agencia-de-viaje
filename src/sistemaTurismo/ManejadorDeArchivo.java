@@ -35,11 +35,13 @@ public class ManejadorDeArchivo {
 	}
 
 	private static Promocion crearPromocion(String[] promocionBase){
+	
 		Promocion.enumDePromocion tipoPromocion = Promocion.enumDePromocion.valueOf(promocionBase[0]);
 		TipoDeAtraccion tipoDePromocion = TipoDeAtraccion.valueOf(promocionBase[1]);
-		String nombreDePromocuon = promocionBase[2];
+		String nombreDePromocion = promocionBase[2];
 		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
 		String[] indicesAtracciones = promocionBase[3].split("-");
+
 		for (String indice : indicesAtracciones) {
 			listaDeAtracciones.add(AgenciaTurismo.atracciones.get(Integer.parseInt(indice)));
 		}
@@ -48,16 +50,16 @@ public class ManejadorDeArchivo {
 		switch (tipoPromocion){
 			case ABSOLUTA:
 				double costoFijo = Double.parseDouble(promocionBase[4]);
-				nuevaPromocion = new PromoAbsoluta(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,costoFijo);
+				nuevaPromocion = new PromoAbsoluta(listaDeAtracciones, tipoDePromocion, nombreDePromocion,costoFijo);
 				break;
 			case AXB:
 				int indiceDeAtraccionExtra = Integer.parseInt(promocionBase[4]);
 				 Facturable atraccionExtra = AgenciaTurismo.atracciones.get(indiceDeAtraccionExtra);
-				nuevaPromocion = new PromoAxB(listaDeAtracciones, tipoDePromocion, nombreDePromocuon,atraccionExtra);
+				nuevaPromocion = new PromoAxB(listaDeAtracciones, tipoDePromocion, nombreDePromocion,atraccionExtra);
 				break;
 			case PORCENTUAL:
 				double porcentajeDescuento = Double.parseDouble(promocionBase[4]);
-				nuevaPromocion = new PromoPorcentual(listaDeAtracciones, tipoDePromocion, nombreDePromocuon, porcentajeDescuento);
+				nuevaPromocion = new PromoPorcentual(listaDeAtracciones, tipoDePromocion, nombreDePromocion, porcentajeDescuento);
 				break;
 			default:
 				throw new IllegalStateException("Unexpected value: " + tipoPromocion);
@@ -79,20 +81,19 @@ public class ManejadorDeArchivo {
 		TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(atraccionBase[4]);
 		Atraccion nuevaAtraccion = new Atraccion(nombre, costoVisita,tiempoPromedio,cupoDiario,tipoAtraccion);
 
-	
 		return nuevaAtraccion;
 	}
-	
+
 	public static List <PerfilUsuario> obtenerUsuario() {
 		 List <PerfilUsuario> listaDePerfilUsuario = new ArrayList<PerfilUsuario>();
 		FileReader fr = null;
 		BufferedReader br = null;
-		
+
 		try {
 			fr = new FileReader("files/PerfilUsuario.txt");
 			br = new BufferedReader(fr);
 			String linea;
-			
+
 			while ((linea = br.readLine())!= null) {
 				try {
 					String [] usuarioBase = linea.split(",");
@@ -100,12 +101,12 @@ public class ManejadorDeArchivo {
 					double presupuesto = Double.parseDouble(usuarioBase[1]);
 					int tiempoDisponible = Integer.parseInt(usuarioBase[2]);
 					TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(usuarioBase[3]);
-										
-					
+				
+
 					PerfilUsuario nuevoUsuario = new PerfilUsuario(nombre, presupuesto, tiempoDisponible, tipoAtraccion);
 					listaDePerfilUsuario.add(nuevoUsuario);
-					
-					
+
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -114,7 +115,7 @@ public class ManejadorDeArchivo {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return listaDePerfilUsuario;
 	}
 

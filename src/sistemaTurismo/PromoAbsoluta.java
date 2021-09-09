@@ -16,6 +16,4 @@ public class PromoAbsoluta extends Promocion {
 		return costoFijo;
 	}
 
-
-
 }

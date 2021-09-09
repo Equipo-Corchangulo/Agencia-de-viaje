@@ -1,10 +1,9 @@
 package sistemaTurismo;
 
-
 import java.util.List;
 
 public class PromoPorcentual extends Promocion {
-	
+
 	private double porcentajeDescuento;
 
 	public PromoPorcentual(List<Facturable> listaDeAtracciones, TipoDeAtraccion tipoDePromocion
@@ -24,6 +23,4 @@ public class PromoPorcentual extends Promocion {
 		return costoTotal;
 	}
 
-
-	
 }

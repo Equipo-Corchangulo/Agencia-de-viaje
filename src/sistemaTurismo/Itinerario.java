@@ -16,17 +16,16 @@ public class Itinerario {
 	public double getCostoMonedas() {
 		return costoMonedas;
 	}
-	
+
 	public List<Facturable> getListaDeVisitas() {
-		
+
 		return this.ListaDeVisitas;
 	}
-	
+
 	public void agregarAtraccion(Facturable atraccion) {
 		this.ListaDeVisitas.add(atraccion);
 		horasNecesarias += atraccion.obtenerTiempoTotal();
 		costoMonedas += atraccion.obtenerCostoTotal();
 	}
-	
 	
 }
