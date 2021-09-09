@@ -7,9 +7,9 @@ public class PromoAxB extends Promocion {
 	public Facturable atraccionExtra;
 
 	public PromoAxB(List<Facturable> listaDeAtracciones, TipoDeAtraccion tipoDePromocion
-			, String nombreDePromocion, Facturable atracionExtra) {
+			, String nombreDePromocion, Facturable atraccionExtra) {
 		super(listaDeAtracciones, tipoDePromocion, nombreDePromocion);
-		this.atraccionExtra = atracionExtra;
+		this.atraccionExtra = atraccionExtra;
 	}
 
 	@Override
