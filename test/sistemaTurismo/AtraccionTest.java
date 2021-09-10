@@ -2,18 +2,22 @@ package sistemaTurismo;
 
 import static org.junit.Assert.*;
 
+import org.junit.AssumptionViolatedException;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class AtraccionTest {
-    Atraccion atraccionMoria = new Atraccion("Aventura", 10, 2, 6, null);
-    Atraccion atraccionMinasTirith = new Atraccion("Paisaje", 5, 2.5, 25, null);
-    Atraccion atraccionLaComarca = new Atraccion("Degustacion", 3, 6.5, 150, null);
-    Atraccion atraccionMordor = new Atraccion("Aventura", 25, 3, 4, null);
-    Atraccion atraccionAbismoDeHelm = new Atraccion("Paisaje", 5, 2, 15, null);
-    Atraccion atraccionLothlorien = new Atraccion("Degustacion", 35, 1, 30, null);
-    Atraccion atraccionErebor = new Atraccion("Paisaje", 12, 3, 32, null);
-    Atraccion atraccionBosqueNegro = new Atraccion("Aventura", 3, 4, 12, null);
+    Atraccion atraccionMoria = new Atraccion("Moira", 10, 2, 6, TipoDeAtraccion.AVENTURA);
+    Atraccion atraccionMinasTirith = new Atraccion("Minar Tirith", 5, 2.5, 25, TipoDeAtraccion.PAISAJE);
+    Atraccion atraccionLaComarca = new Atraccion("La Comarca", 3, 6.5, 150, TipoDeAtraccion.DEGUSTACION);
+    Atraccion atraccionMordor = new Atraccion("Mordor", 25, 3, 4, TipoDeAtraccion.AVENTURA);
+    Atraccion atraccionAbismoDeHelm = new Atraccion("Abismo de Helm", 5, 2, 15, TipoDeAtraccion.PAISAJE);
+    Atraccion atraccionLothlorien = new Atraccion("Lothorien", 35, 1, 30, TipoDeAtraccion.DEGUSTACION);
+    Atraccion atraccionErebor = new Atraccion("Erbor", 12, 3, 32, TipoDeAtraccion.PAISAJE);
+    Atraccion atraccionBosqueNegro = new Atraccion("Bosque Negro", 3, 4, 12, TipoDeAtraccion.AVENTURA);
 
 
     @Test
