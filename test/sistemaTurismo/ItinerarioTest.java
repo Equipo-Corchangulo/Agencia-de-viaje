@@ -11,22 +11,26 @@ import org.junit.Test;
 public class ItinerarioTest {
 	
 	  
-	/*@Test
-	public void test() {
-		 /* List<Facturable> ListaDeVisitasEsperada = new ArrayList<Facturable>();
+	@Test
+	public void testuno() {
+		 List<Facturable> ListaDeVisitasEsperada = new ArrayList<Facturable>();
 		  ListaDeVisitasEsperada.add(new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA));
 		  List<Facturable> ListaDeVisitasFinal = new ArrayList<Facturable>();
 		  ListaDeVisitasFinal.add(new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA));
 		  assertArrayEquals(ListaDeVisitasEsperada.toArray(), ListaDeVisitasFinal.toArray() );
 
-	}*/
+	}
 	
 	@Test
 	public void getListaDeVisitasTest() {
-		  List<Facturable> ListaDeVisitasEsperada = new ArrayList<Facturable>();
-		  ListaDeVisitasEsperada.add(new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA));
-		  Itinerario prueba01 = new Itinerario();
-		  assertEquals(ListaDeVisitasEsperada, prueba01.getListaDeVisitas());
+  		List<Facturable> ListaDeVisitasEsperada = new ArrayList<Facturable>();
+  		Facturable atraccion = new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA);
+  		PerfilUsuario usuario = new PerfilUsuario("Irina",10.0,5,TipoDeAtraccion.AVENTURA);
+		Itinerario prueba01 = new Itinerario(usuario);
+
+  		ListaDeVisitasEsperada.add(atraccion);
+  		prueba01.agregarAtraccion(atraccion);
+  		assertEquals(ListaDeVisitasEsperada, prueba01.getListaDeVisitas());
 
 	}
 	
