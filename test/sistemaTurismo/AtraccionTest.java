@@ -2,22 +2,17 @@ package sistemaTurismo;
 
 import static org.junit.Assert.*;
 
-import org.junit.AssumptionViolatedException;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class AtraccionTest {
-    Atraccion atraccionMoria = new Atraccion("Moira", 10, 2, 6, TipoDeAtraccion.AVENTURA);
-    Atraccion atraccionMinasTirith = new Atraccion("Minar Tirith", 5, 2.5, 25, TipoDeAtraccion.PAISAJE);
-    Atraccion atraccionLaComarca = new Atraccion("La Comarca", 3, 6.5, 150, TipoDeAtraccion.DEGUSTACION);
-    Atraccion atraccionMordor = new Atraccion("Mordor", 25, 3, 4, TipoDeAtraccion.AVENTURA);
-    Atraccion atraccionAbismoDeHelm = new Atraccion("Abismo de Helm", 5, 2, 15, TipoDeAtraccion.PAISAJE);
-    Atraccion atraccionLothlorien = new Atraccion("Lothorien", 35, 1, 30, TipoDeAtraccion.DEGUSTACION);
-    Atraccion atraccionErebor = new Atraccion("Erbor", 12, 3, 32, TipoDeAtraccion.PAISAJE);
-    Atraccion atraccionBosqueNegro = new Atraccion("Bosque Negro", 3, 4, 12, TipoDeAtraccion.AVENTURA);
+    Atraccion atraccionMoria = new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA);
+    Atraccion atraccionMinasTirith = new Atraccion("Paisaje", 5, 2.5, 25, TipoDeAtraccion.PAISAJE);
+    Atraccion atraccionLaComarca = new Atraccion("Degustacion", 3, 6.5, 150, TipoDeAtraccion.DEGUSTACION);
+    Atraccion atraccionMordor = new Atraccion("Aventura", 25, 3, 4, TipoDeAtraccion.AVENTURA);
+    Atraccion atraccionAbismoDeHelm = new Atraccion("Paisaje", 5, 2, 15, TipoDeAtraccion.PAISAJE);
+    Atraccion atraccionLothlorien = new Atraccion("Degustacion", 35, 1, 30, TipoDeAtraccion.DEGUSTACION);
+    Atraccion atraccionErebor = new Atraccion("Paisaje", 12, 3, 32, TipoDeAtraccion.PAISAJE);
+    Atraccion atraccionBosqueNegro = new Atraccion("Aventura", 3, 4, 12, TipoDeAtraccion.AVENTURA);
 
 
     @Test
@@ -56,18 +51,7 @@ public class AtraccionTest {
         assertEquals(3, atraccionBosqueNegro.obtenerCostoTotal(),0);
     }
 
-    @Test
-    public void getCupoTest() {
-        assertEquals(6, atraccionMoria.getCupo(),0);
-        assertEquals(25, atraccionMinasTirith.getCupo(),0);
-        assertEquals(150, atraccionLaComarca.getCupo(),0);
-        assertEquals(4, atraccionMordor.getCupo(),0);
-        assertEquals(15, atraccionAbismoDeHelm.getCupo(),0);
-        assertEquals(30, atraccionLothlorien.getCupo(),0);
-        assertEquals(32, atraccionErebor.getCupo(),0);
-        assertEquals(12, atraccionBosqueNegro.getCupo(),0);
-    }
-
+  
     @Test
     public void hayCupoTest() {
         assertTrue(atraccionMoria.hayCupo());
@@ -83,7 +67,47 @@ public class AtraccionTest {
     @Test
     public void restarCupoTest() {
 
+    }
+    
+    @Test
+    public void getCupoTest() {
+        assertEquals(6, atraccionMoria.getCupo(),0);
+        assertEquals(25, atraccionMinasTirith.getCupo(),0);
+        assertEquals(150, atraccionLaComarca.getCupo(),0);
+        assertEquals(4, atraccionMordor.getCupo(),0);
+        assertEquals(15, atraccionAbismoDeHelm.getCupo(),0);
+        assertEquals(30, atraccionLothlorien.getCupo(),0);
+        assertEquals(32, atraccionErebor.getCupo(),0);
+        assertEquals(12, atraccionBosqueNegro.getCupo(),0);
+    }
+    
+    @Test
+    public void getTipoTest() {    	
+    	assertEquals(TipoDeAtraccion.AVENTURA, atraccionMoria.getTipo());
+    	assertEquals(TipoDeAtraccion.PAISAJE, atraccionMinasTirith.getTipo());
+    	assertEquals(TipoDeAtraccion.DEGUSTACION, atraccionLaComarca.getTipo());
+    	assertEquals(TipoDeAtraccion.AVENTURA, atraccionMordor.getTipo());
+    	assertEquals(TipoDeAtraccion.PAISAJE, atraccionAbismoDeHelm.getTipo());
+    	assertEquals(TipoDeAtraccion.DEGUSTACION, atraccionLothlorien.getTipo());
+    	assertEquals(TipoDeAtraccion.PAISAJE, atraccionErebor.getTipo());
+    	assertEquals(TipoDeAtraccion.AVENTURA, atraccionBosqueNegro.getTipo());
+    }
+    
+    @Test
+    public void compareToTest() {
+    	
+    }
 
+    @Test
+    public void esPromocionTest() {
+    	 assertFalse(atraccionMoria.esPromocion());
+    	 assertFalse(atraccionMinasTirith.esPromocion());
+    	 assertFalse(atraccionLaComarca.esPromocion());
+    	 assertFalse(atraccionMordor.esPromocion());
+    	 assertFalse(atraccionAbismoDeHelm.esPromocion());
+    	 assertFalse(atraccionLothlorien.esPromocion());
+    	 assertFalse(atraccionErebor.esPromocion());
+    	 assertFalse(atraccionBosqueNegro.esPromocion());
     }
 
 
