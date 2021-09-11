@@ -27,7 +27,7 @@ public abstract class Promocion  implements Facturable {
 				+ " del tipo: " + this.getTipo()
 				+ " costo: " + this.obtenerCostoTotal()
 				+ " Tiempo requerido: " + this.obtenerTiempoTotal()
-				+ " || ";
+				+ " Atracciones Incluidas: " + this.listaDeAtracciones.toString();
 	}
 	@Override
 	public  boolean esPromocion(){

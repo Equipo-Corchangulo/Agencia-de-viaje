@@ -1,0 +1,1 @@
+Itinerario: usuario = Gandalf, horasNecesarias = 5.0, costoMonedas = 17.0, ListaDeVisitas = [Atraccion : Erebor, tiempo promedio : 3.0, costo : 12.0, tipo de atraccion : PAISAJE, Atraccion : Abismo de Helm, tiempo promedio : 2.0, costo : 5.0, tipo de atraccion : PAISAJE]

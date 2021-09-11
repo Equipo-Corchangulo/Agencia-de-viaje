@@ -1,10 +1,6 @@
-Itinerario{usuario=Irina, horasNecesarias=9.0, costoMonedas=4.0, ListaDeVisitas=[promocion: Pack aventura del tipo: AVENTURA costo: 3.0 Tiempo requerido: 4.0 || , promocion: Pack et del tipo: DEGUSTACION costo: 1.0 Tiempo requerido: 5.0 || ]}
-Itinerario{usuario=Micaela, horasNecesarias=5.0, costoMonedas=1.0, ListaDeVisitas=[promocion: Pack et del tipo: DEGUSTACION costo: 1.0 Tiempo requerido: 5.0 || ]}
-Itinerario{usuario=Eowyn, horasNecesarias=7.0, costoMonedas=4.0, ListaDeVisitas=[promocion: Pack aventura del tipo: AVENTURA costo: 3.0 Tiempo requerido: 4.0 || , Atraccion : LA COMARCA, tiempo promedio : 3.0, costo : 1.0, tipo de atraccion : DEGUSTACION || ]}
-Itinerario{usuario=Gandalf, horasNecesarias=4.0, costoMonedas=17.0, ListaDeVisitas=[promocion:  Pack montaña del tipo: AVENTURA costo: 17.0 Tiempo requerido: 4.0 || ]}
-Itinerario{usuario=Sam, horasNecesarias=7.0, costoMonedas=11.0, ListaDeVisitas=[promocion: Pack et del tipo: DEGUSTACION costo: 1.0 Tiempo requerido: 5.0 || , Atraccion : MORDOR, tiempo promedio : 2.0, costo : 10.0, tipo de atraccion : AVENTURA || ]}
-Itinerario{usuario=Galadriel, horasNecesarias=2.0, costoMonedas=10.0, ListaDeVisitas=[Atraccion : MORDOR, tiempo promedio : 2.0, costo : 10.0, tipo de atraccion : AVENTURA || ]}
-Itinerario{usuario=Tyrion, horasNecesarias=7.0, costoMonedas=11.0, ListaDeVisitas=[promocion: Pack et del tipo: DEGUSTACION costo: 1.0 Tiempo requerido: 5.0 || , Atraccion : MORDOR, tiempo promedio : 2.0, costo : 10.0, tipo de atraccion : AVENTURA || ]}
-Itinerario{usuario=Jon, horasNecesarias=4.0, costoMonedas=17.0, ListaDeVisitas=[promocion:  Pack montaña del tipo: AVENTURA costo: 17.0 Tiempo requerido: 4.0 || ]}
-Itinerario{usuario=Arya, horasNecesarias=3.0, costoMonedas=1.0, ListaDeVisitas=[Atraccion : LA COMARCA, tiempo promedio : 3.0, costo : 1.0, tipo de atraccion : DEGUSTACION || ]}
-Itinerario{usuario=Varys, horasNecesarias=0.0, costoMonedas=0.0, ListaDeVisitas=[]}
+Itinerario: usuario = Irina, horasNecesarias = 9.5, costoMonedas = 27.4, ListaDeVisitas = [promocion:  Pack Aventura del tipo: AVENTURA costo: 22.4 Tiempo requerido: 7.0 || , Atraccion : Minas Tirith, tiempo promedio : 2.5, costo : 5.0, tipo de atraccion : PAISAJE || ]
+Itinerario: usuario = Micaela, horasNecesarias = 2.5, costoMonedas = 5.0, ListaDeVisitas = [Atraccion : Minas Tirith, tiempo promedio : 2.5, costo : 5.0, tipo de atraccion : PAISAJE || ]
+Itinerario: usuario = Eowyn, horasNecesarias = 2.0, costoMonedas = 10.0, ListaDeVisitas = [Atraccion : Moria, tiempo promedio : 2.0, costo : 10.0, tipo de atraccion : AVENTURA || ]
+Itinerario: usuario = Gandalf, horasNecesarias = 5.0, costoMonedas = 17.0, ListaDeVisitas = [Atraccion : Erebor, tiempo promedio : 3.0, costo : 12.0, tipo de atraccion : PAISAJE || , Atraccion : Abismo de Helm, tiempo promedio : 2.0, costo : 5.0, tipo de atraccion : PAISAJE || ]
+Itinerario: usuario = Sam, horasNecesarias = 7.5, costoMonedas = 36.0, ListaDeVisitas = [promocion: Pack Degustacion del tipo: DEGUSTACION costo: 36.0 Tiempo requerido: 7.5 || ]
+Itinerario: usuario = Galadriel, horasNecesarias = 2.0, costoMonedas = 5.0, ListaDeVisitas = [Atraccion : Abismo de Helm, tiempo promedio : 2.0, costo : 5.0, tipo de atraccion : PAISAJE || ]

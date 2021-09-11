@@ -129,17 +129,20 @@ public class ManejadorDeArchivo {
 		return listaDePerfilUsuario;
 	}
 
-	public static void guardarItinerarioEnArchivo(List<Itinerario> listaDeItinerarios){
+	public static void guardarItinerarioEnArchivo(Itinerario itinerarioAImprimir){
 		//hacer mi logica para guardar
-		File f = new File("files/ReportedeItinerarios.txt");
+		File f = new File("files/ReportedeItinerarios"+itinerarioAImprimir.getUsuario().getNombre()+".txt");
 		PrintWriter pw;
-		System.out.println("==========================REPORTE DE ITINERARIO===============================");
+
 		try {
 			pw = new PrintWriter(f);
-			for(Itinerario itinerario : listaDeItinerarios){
-				pw.write(itinerario.toString() + "\n");
-				System.out.println(itinerario);
-			}
+
+			System.out.println("------------------------- REPORTE DE ITINERARIO ------------------------");
+			pw.write(itinerarioAImprimir.toString() + "\n");
+			System.out.println(itinerarioAImprimir);
+			System.out.println("------------------------- FIN DE REPORTE -------------------------------");
+			System.out.println();
+			System.out.println();
 			pw.close();
 		} catch (FileNotFoundException e){
 			e.printStackTrace();

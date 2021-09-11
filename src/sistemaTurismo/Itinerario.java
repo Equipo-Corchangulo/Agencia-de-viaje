@@ -43,14 +43,16 @@ public class Itinerario {
 		}
 		return false;
 	}
+	public PerfilUsuario getUsuario(){
+		return this.usuario;
+	}
 
 	@Override
 	public String toString() {
-		return "Itinerario{" +
-				"usuario=" + usuario.getNombre() +
-				", horasNecesarias=" + horasNecesarias +
-				", costoMonedas=" + costoMonedas +
-				", ListaDeVisitas=" + this.getListaDeVisitas().toString() +
-				'}';
+		return "Itinerario: " +
+				"usuario = " + usuario.getNombre() +
+				", horasNecesarias = " + horasNecesarias +
+				", costoMonedas = " + costoMonedas +
+				", ListaDeVisitas = " + this.getListaDeVisitas().toString();
 	}
 }

@@ -11,13 +11,10 @@ public class Recomendador {
 
 	private List<Facturable> listaDeFacturables;
 
-	private List<Itinerario> listaDeItinerarios;
-
 	public Recomendador(List<PerfilUsuario> listaDeUsuarios, List<Facturable> listaDeFacturables) {
 		super();
 		this.listaDeUsuarios = listaDeUsuarios;
 		this.listaDeFacturables = listaDeFacturables;
-		this.listaDeItinerarios = new ArrayList<Itinerario>();
 	}
 
 	
@@ -43,10 +40,8 @@ public class Recomendador {
 			Collections.sort(listaDeFacturables, new ComparadorDeFacturable(usuario.getTipoDeAtraccion()));
 
 			iterarSugerencias(usuario, nuevoItinerario);
-	
-			listaDeItinerarios.add(nuevoItinerario);
+			ManejadorDeArchivo.guardarItinerarioEnArchivo(nuevoItinerario);
 		}
-		ManejadorDeArchivo.guardarItinerarioEnArchivo(listaDeItinerarios);
 	}
 
 	public void iterarSugerencias(PerfilUsuario usuario, Itinerario nuevoItinerario) {
