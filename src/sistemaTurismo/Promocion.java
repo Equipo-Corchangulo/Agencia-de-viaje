@@ -107,25 +107,14 @@ public abstract class Promocion  implements Facturable {
 			return false;
 		return true;
 	}
-
+	public List<Facturable> getListaDeAtracciones(){
+		return this.listaDeAtracciones;
+	}
 	@Override
 	public boolean seEncuentraEnElFacturable(Facturable facturable){
-		if (facturable.getClass() == Atraccion.class) {
-			for (Facturable atraccion : this.listaDeAtracciones) {
-				if (atraccion.equals(facturable))
-					return true;
-			}
-		}
-		else{
-			if(this.equals(facturable)){
+		for (Facturable atraccion : this.listaDeAtracciones) {
+			if (facturable.seEncuentraEnElFacturable(atraccion)){
 				return true;
-			}
-			else {
-				for (Facturable atraccion : this.listaDeAtracciones) {
-					if (facturable.seEncuentraEnElFacturable(atraccion)){
-						return true;
-					}
-				}
 			}
 		}
 		return false;
