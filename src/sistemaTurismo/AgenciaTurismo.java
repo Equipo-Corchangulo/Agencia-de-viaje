@@ -11,7 +11,7 @@ public class AgenciaTurismo {
 	AgenciaTurismo.facturables = ManejadorDeArchivo.obtenerFacturables();
 
 	List<PerfilUsuario> usuarios = ManejadorDeArchivo.obtenerUsuario();
-
+	Atraccion a = (Atraccion) facturables.get(0);
 	Recomendador recomendar = new Recomendador(usuarios, facturables);
 	recomendar.ofrecerSugerencias();
 	System.out.println("Programa Terminado");

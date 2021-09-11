@@ -85,7 +85,8 @@ public class ManejadorDeArchivo {
 		double tiempoPromedio = Double.parseDouble(atraccionBase[2]);
 		int cupoDiario = Integer.parseInt(atraccionBase[3]);
 		TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(atraccionBase[4]);
-		Atraccion nuevaAtraccion = new Atraccion(nombre, costoVisita,tiempoPromedio,cupoDiario,tipoAtraccion);
+		int iD = Integer.parseInt(atraccionBase[5]);
+		Atraccion nuevaAtraccion = new Atraccion(nombre, costoVisita,tiempoPromedio,cupoDiario,tipoAtraccion, iD);
 
 		return nuevaAtraccion;
 	}

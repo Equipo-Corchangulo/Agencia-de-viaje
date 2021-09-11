@@ -34,11 +34,6 @@ public abstract class Promocion  implements Facturable {
 	}
 
 	@Override
-	public int compareTo(Facturable o) {
-		return o.esPromocion() ? 0 : 1;
-	}
-
-	@Override
 	public boolean hayCupo() {
 		for (Facturable atraccion : listaDeAtracciones) {
 			if (!atraccion.hayCupo())
@@ -79,4 +74,62 @@ public abstract class Promocion  implements Facturable {
 		return costoTotal;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((listaDeAtracciones == null) ? 0 : listaDeAtracciones.hashCode());
+		result = prime * result + ((nombreDePromocion == null) ? 0 : nombreDePromocion.hashCode());
+		result = prime * result + ((tipoDeAtraccion == null) ? 0 : tipoDeAtraccion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Promocion other = (Promocion) obj;
+		if (listaDeAtracciones == null) {
+			if (other.listaDeAtracciones != null)
+				return false;
+		} else if (!listaDeAtracciones.equals(other.listaDeAtracciones))
+			return false;
+		if (nombreDePromocion == null) {
+			if (other.nombreDePromocion != null)
+				return false;
+		} else if (!nombreDePromocion.equals(other.nombreDePromocion))
+			return false;
+		if (tipoDeAtraccion != other.tipoDeAtraccion)
+			return false;
+		return true;
+	}
+
+	@Override
+	public boolean seEncuentraEnElFacturable(Facturable facturable){
+		if (facturable.getClass() == Atraccion.class) {
+			for (Facturable atraccion : this.listaDeAtracciones) {
+				if (atraccion.equals(facturable))
+					return true;
+			}
+		}
+		else{
+			if(this.equals(facturable)){
+				return true;
+			}
+			else {
+				for (Facturable atraccion : this.listaDeAtracciones) {
+					if (facturable.seEncuentraEnElFacturable(atraccion)){
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	
+	
 }

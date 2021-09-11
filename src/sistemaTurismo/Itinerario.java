@@ -33,6 +33,14 @@ public class Itinerario {
 		horasNecesarias += atraccion.obtenerTiempoTotal();
 		costoMonedas += atraccion.obtenerCostoTotal();
 	}
-
+	 
+	public boolean poseeAtraccion(Facturable atraccion) {
+		for(Facturable visitas: this.ListaDeVisitas){
+			if(visitas.seEncuentraEnElFacturable(atraccion)){
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

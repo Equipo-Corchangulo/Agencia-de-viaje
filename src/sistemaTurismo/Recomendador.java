@@ -53,6 +53,9 @@ public class Recomendador {
 			if (!usuario.tieneTiempoYdinero()){
 				return;
 			}
+			else if(nuevoItinerario.poseeAtraccion(atraccion)){
+				continue;
+			}
 			
 			if(usuario.puedeComprar(atraccion) && atraccion.hayCupo()) {
 
