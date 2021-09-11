@@ -33,10 +33,13 @@ public class ManejadorDeArchivo {
 					e.printStackTrace();
 				}
 			}
+			br.close();
+			fr.close();
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+
 
 		return listaDeAtracciones;
 	}
@@ -124,6 +127,24 @@ public class ManejadorDeArchivo {
 		}
 
 		return listaDePerfilUsuario;
+	}
+
+	public static void guardarItinerarioEnArchivo(List<Itinerario> listaDeItinerarios){
+		//hacer mi logica para guardar
+		File f = new File("files/ReportedeItinerarios.txt");
+		PrintWriter pw;
+		System.out.println("==========================REPORTE DE ITINERARIO===============================");
+		try {
+			pw = new PrintWriter(f);
+			for(Itinerario itinerario : listaDeItinerarios){
+				pw.write(itinerario.toString() + "\n");
+				System.out.println(itinerario);
+			}
+			pw.close();
+		} catch (FileNotFoundException e){
+			e.printStackTrace();
+		}
+
 	}
 
 }

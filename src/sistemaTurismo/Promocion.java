@@ -26,7 +26,8 @@ public abstract class Promocion  implements Facturable {
 		return "promocion: "+ this.nombreDePromocion
 				+ " del tipo: " + this.getTipo()
 				+ " costo: " + this.obtenerCostoTotal()
-				+ " Tiempo requerido: " + this.obtenerTiempoTotal();
+				+ " Tiempo requerido: " + this.obtenerTiempoTotal()
+				+ " || ";
 	}
 	@Override
 	public  boolean esPromocion(){
@@ -107,9 +108,7 @@ public abstract class Promocion  implements Facturable {
 			return false;
 		return true;
 	}
-	public List<Facturable> getListaDeAtracciones(){
-		return this.listaDeAtracciones;
-	}
+
 	@Override
 	public boolean seEncuentraEnElFacturable(Facturable facturable){
 		for (Facturable atraccion : this.listaDeAtracciones) {

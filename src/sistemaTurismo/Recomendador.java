@@ -46,6 +46,7 @@ public class Recomendador {
 	
 			listaDeItinerarios.add(nuevoItinerario);
 		}
+		ManejadorDeArchivo.guardarItinerarioEnArchivo(listaDeItinerarios);
 	}
 
 	public void iterarSugerencias(PerfilUsuario usuario, Itinerario nuevoItinerario) {

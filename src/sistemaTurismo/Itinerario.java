@@ -1,6 +1,7 @@
 package sistemaTurismo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Itinerario {
@@ -43,4 +44,13 @@ public class Itinerario {
 		return false;
 	}
 
+	@Override
+	public String toString() {
+		return "Itinerario{" +
+				"usuario=" + usuario.getNombre() +
+				", horasNecesarias=" + horasNecesarias +
+				", costoMonedas=" + costoMonedas +
+				", ListaDeVisitas=" + this.getListaDeVisitas().toString() +
+				'}';
+	}
 }
