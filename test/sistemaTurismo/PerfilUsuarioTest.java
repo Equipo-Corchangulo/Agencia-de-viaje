@@ -50,7 +50,9 @@ public class PerfilUsuarioTest {
 	
 	@Test
 	public void reservarTiempoYDineroTest() {
-		
+		Eowyn.reservarTiempoYdinero(atraccionLaComarca);
+		assertEquals(7, Eowyn.getPresupuesto(), 0);
+		assertEquals(1.5, Eowyn.getTiempoDisponible(), 0);		
 	}
 	
 	@Test
