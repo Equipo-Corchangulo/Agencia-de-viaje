@@ -23,12 +23,17 @@ public abstract class Promocion  implements Facturable {
 
 	@Override
 	public String toString() {
-		return "promocion: "+ this.nombreDePromocion
+		String salida = "promocion: "+ this.nombreDePromocion
 				+ " del tipo: " + this.getTipo()
 				+ " costo: " + this.obtenerCostoTotal()
-				+ " Tiempo requerido: " + this.obtenerTiempoTotal()
-				+ " Atracciones Incluidas: " + this.listaDeAtracciones.toString();
+				+ " Tiempo requerido: " + this.obtenerTiempoTotal() + "\n"
+				+ "Atracciones Incluidas: \n";
+			for (Facturable facturable : listaDeAtracciones) {
+				salida += facturable.toString();
+			}
+		return salida;
 	}
+	
 	@Override
 	public  boolean esPromocion(){
 		return  true;

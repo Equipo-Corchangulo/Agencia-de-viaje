@@ -30,5 +30,18 @@ public class PromoAxB extends Promocion {
 		super.restarCupo();
 		atraccionExtra.restarCupo();
 	}
+
+	@Override
+	public boolean seEncuentraEnElFacturable(Facturable facturable) {
+
+		return super.seEncuentraEnElFacturable(facturable) || this.atraccionExtra.seEncuentraEnElFacturable(facturable);
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() +"Atraccion de regalo: \n" + atraccionExtra;
+	}
+	
+	
 	
 }

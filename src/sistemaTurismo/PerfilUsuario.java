@@ -17,8 +17,8 @@ public class PerfilUsuario {
 
 	@Override
 	public String toString() {
-		return "PerfilUsuario [presupuesto=" + presupuesto + ", tiempoDisponible=" + tiempoDisponible
-				+ ", tipoDeAtraccion=" + tipoDeAtraccion + "]";
+		return "Nombre:" + nombre+ ", Monedas Disponible : " + presupuesto + ", Tiempo Disponible:" + tiempoDisponible
+				+ ", Tipo de atraccion:" + tipoDeAtraccion + " ";
 	}
 
 	public double getPresupuesto() {

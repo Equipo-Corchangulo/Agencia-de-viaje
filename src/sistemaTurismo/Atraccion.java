@@ -25,7 +25,7 @@ public class Atraccion implements Facturable {
 	@Override
 	public String toString() {
 		return "Atraccion : " + nombre + ", tiempo promedio : " + tiempoPromedio + ", costo : " + costoVisita +
-				", tipo de atraccion : " + tipoAtraccion;
+				" tipo de atraccion : " + tipoAtraccion  + "\n";
 
 	}
 
