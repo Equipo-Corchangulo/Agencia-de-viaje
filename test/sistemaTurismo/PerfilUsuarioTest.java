@@ -10,14 +10,18 @@ public class PerfilUsuarioTest {
 		PerfilUsuario Eowyn = new PerfilUsuario("Eowyn", 10, 8, TipoDeAtraccion.AVENTURA);
 		PerfilUsuario Gandalf = new PerfilUsuario("Gandalf", 100, 5, TipoDeAtraccion.PAISAJE);
 		PerfilUsuario Sam = new PerfilUsuario("Sam", 36, 8, TipoDeAtraccion.DEGUSTACION);
-		PerfilUsuario Galadriel = new PerfilUsuario("Galadriel", 120, 6, TipoDeAtraccion.PAISAJE);
+		PerfilUsuario Galadriel = new PerfilUsuario("Galadriel", 0, 6, TipoDeAtraccion.PAISAJE);
+	
+	        Atraccion atraccionMoria = new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA,0);
+	        Atraccion atraccionMinasTirith = new Atraccion("Paisaje", 15, 2.5, 25, TipoDeAtraccion.PAISAJE,1);
+	        Atraccion atraccionLaComarca = new Atraccion("Degustacion", 3, 6.5, 150, TipoDeAtraccion.DEGUSTACION,2);
 
 	@Test
 	public void getPresupuestoTest() {
 		assertEquals(10, Eowyn.getPresupuesto(), 0);
 		assertEquals(100, Gandalf.getPresupuesto(), 0);
 		assertEquals(36, Sam.getPresupuesto(), 0);
-		assertEquals(120, Galadriel.getPresupuesto(), 0);
+		assertEquals(0, Galadriel.getPresupuesto(), 0);
 	}
 	
 	@Test
@@ -54,12 +58,13 @@ public class PerfilUsuarioTest {
 		assertTrue(Eowyn.tieneTiempoYdinero());
 		assertTrue(Gandalf.tieneTiempoYdinero());
 		assertTrue(Sam.tieneTiempoYdinero());
-		assertTrue(Galadriel.tieneTiempoYdinero());
+		assertFalse(Galadriel.tieneTiempoYdinero());
 	}
 	
 	@Test
 	public void puedeComprarTest() {
-
+                assertTrue(Gandalf.puedeComprar(atraccionMoria));
+                assertFalse(Eowyn.puedeComprar(atraccionMinasTirith));
 	}
 	
 }
