@@ -2,7 +2,9 @@ package sistemaTurismo;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.Test;
+
 
 public class AtraccionTest {
     Atraccion atraccionMoria = new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA,0);
@@ -28,6 +30,18 @@ public class AtraccionTest {
     }
 
     @Test
+    public void obtenerCostoTotalTest() {
+        assertEquals(10, atraccionMoria.obtenerCostoTotal(),0);
+        assertEquals(5, atraccionMinasTirith.obtenerCostoTotal(),0);
+        assertEquals(3, atraccionLaComarca.obtenerCostoTotal(),0);
+        assertEquals(25, atraccionMordor.obtenerCostoTotal(),0);
+        assertEquals(5, atraccionAbismoDeHelm.obtenerCostoTotal(),0);
+        assertEquals(35, atraccionLothlorien.obtenerCostoTotal(),0);
+        assertEquals(12, atraccionErebor.obtenerCostoTotal(),0);
+        assertEquals(3, atraccionBosqueNegro.obtenerCostoTotal(),0);
+    }
+    
+    @Test
     public void obtenerTiempoTotalTest() {
         assertEquals(2, atraccionMoria.obtenerTiempoTotal(),0);
         assertEquals(2.5, atraccionMinasTirith.obtenerTiempoTotal(),0);
@@ -39,19 +53,6 @@ public class AtraccionTest {
         assertEquals(4, atraccionBosqueNegro.obtenerTiempoTotal(),0);
     }
 
-    @Test
-    public void obtenerCostoTotalTest() {
-        assertEquals(10, atraccionMoria.obtenerCostoTotal(),0);
-        assertEquals(5, atraccionMinasTirith.obtenerCostoTotal(),0);
-        assertEquals(3, atraccionLaComarca.obtenerCostoTotal(),0);
-        assertEquals(25, atraccionMordor.obtenerCostoTotal(),0);
-        assertEquals(5, atraccionAbismoDeHelm.obtenerCostoTotal(),0);
-        assertEquals(35, atraccionLothlorien.obtenerCostoTotal(),0);
-        assertEquals(12, atraccionErebor.obtenerCostoTotal(),0);
-        assertEquals(3, atraccionBosqueNegro.obtenerCostoTotal(),0);
-    }
-
-  
     @Test
     public void hayCupoTest() {
         assertTrue(atraccionMoria.hayCupo());
@@ -109,8 +110,21 @@ public class AtraccionTest {
     }
     
     @Test
-    public void compareToTest() {
+    public void seEncuentraEnElFacturableTest() {
     	
+    	/*------------HAY QUE CHEQUEAR QUE LAS PROMOCIONES TAMBIEN SE ENCUENTREN EN FACTURABLE------*/
+    	/*List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
+    	/*Promocion promo01 = new Promocion(listaDeAtracciones, TipoDeAtraccion.AVENTURA, "Promo AXB");
+    	/*assertTrue(atraccionMoria.seEncuentraEnElFacturable(promo01));*/
+    	
+    	assertTrue(atraccionMoria.seEncuentraEnElFacturable(atraccionMoria));
+    	assertTrue(atraccionMinasTirith.seEncuentraEnElFacturable(atraccionMinasTirith));
+    	assertTrue(atraccionLaComarca.seEncuentraEnElFacturable(atraccionLaComarca));
+    	assertTrue(atraccionMordor.seEncuentraEnElFacturable(atraccionMordor));
+    	assertTrue(atraccionAbismoDeHelm.seEncuentraEnElFacturable(atraccionAbismoDeHelm));
+    	assertTrue(atraccionLothlorien.seEncuentraEnElFacturable(atraccionLothlorien));
+    	assertTrue(atraccionErebor.seEncuentraEnElFacturable(atraccionErebor));
+    	assertTrue(atraccionBosqueNegro.seEncuentraEnElFacturable(atraccionBosqueNegro));
     }
 
     @Test
@@ -124,13 +138,4 @@ public class AtraccionTest {
     	 assertFalse(atraccionErebor.esPromocion());
     	 assertFalse(atraccionBosqueNegro.esPromocion());
     }
-
-
-
-
-
-
-
-
-
 }
