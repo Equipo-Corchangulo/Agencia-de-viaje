@@ -66,7 +66,22 @@ public class AtraccionTest {
 
     @Test
     public void restarCupoTest() {
-
+        atraccionMoria.restarCupo();
+    	assertEquals(5, atraccionMoria.getCupo());
+    	atraccionMinasTirith.restarCupo();
+        assertEquals(24, atraccionMinasTirith.getCupo());
+        atraccionLaComarca.restarCupo();
+        assertEquals(149, atraccionLaComarca.getCupo());
+        atraccionMordor.restarCupo();
+        assertEquals(3, atraccionMordor.getCupo());
+        atraccionAbismoDeHelm.restarCupo();
+        assertEquals(14, atraccionAbismoDeHelm.getCupo());
+        atraccionLothlorien.restarCupo();
+        assertEquals(29, atraccionLothlorien.getCupo());
+        atraccionErebor.restarCupo();
+        assertEquals(31, atraccionErebor.getCupo());
+        atraccionBosqueNegro.restarCupo();
+        assertEquals(11, atraccionBosqueNegro.getCupo());
     }
     
     @Test
