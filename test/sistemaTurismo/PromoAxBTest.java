@@ -22,11 +22,8 @@ public class PromoAxBTest {
 	public Facturable atraccionSpecial = new Atraccion("Aventura", 15, 3, 2, TipoDeAtraccion.AVENTURA,8);
 	
 	public List<Facturable> atraccion = new ArrayList<Facturable>();
-	
 	public List<Facturable> atraccionDePromo = new ArrayList<Facturable>();
-	
-	public PerfilUsuario usuario = new PerfilUsuario("Josy", 500, 10, TipoDeAtraccion.AVENTURA);
-	
+		
 	PromoAxB promoAxB = new PromoAxB(atraccion, TipoDeAtraccion.AVENTURA, "Promo AxB", atraccionMordor);
 	
 
