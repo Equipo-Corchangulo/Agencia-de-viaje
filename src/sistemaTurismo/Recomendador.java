@@ -44,26 +44,30 @@ public class Recomendador {
 			ManejadorDeArchivo.guardarItinerarioEnArchivo(nuevoItinerario);
 		}
 	}
-
+	
+	public boolean seDebeOcultarAtraccion(Facturable atraccion, Itinerario itinerario, PerfilUsuario usuario) {
+		
+		return itinerario.poseeAtraccion(atraccion) || !usuario.puedeComprar(atraccion) || !atraccion.hayCupo();
+	}
+	
 	public void iterarSugerencias(PerfilUsuario usuario, Itinerario nuevoItinerario) {
 		for (Facturable atraccion :listaDeFacturables) {
 			if (!usuario.tieneTiempoYdinero()){
 				return;
 			}
-			else if(nuevoItinerario.poseeAtraccion(atraccion)){
+			else if(seDebeOcultarAtraccion(atraccion, nuevoItinerario, usuario)){
 				continue;
 			}
 			
-			if(usuario.puedeComprar(atraccion) && atraccion.hayCupo()) {
+			
 
-				System.out.println(atraccion);
+			System.out.println(atraccion);
 
-				//si el usuario lo quiere la agregamos al itinerario
-				if(leer()) {
-					atraccion.restarCupo();
-					nuevoItinerario.agregarAtraccion(atraccion);
-					usuario.reservarTiempoYdinero(atraccion);
-				}
+			//si el usuario lo quiere la agregamos al itinerario
+			if(leer()) {
+				atraccion.restarCupo();
+				nuevoItinerario.agregarAtraccion(atraccion);
+				usuario.reservarTiempoYdinero(atraccion);
 			}
 		}
 	}

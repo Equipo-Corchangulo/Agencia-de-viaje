@@ -49,10 +49,14 @@ public class Itinerario {
 
 	@Override
 	public String toString() {
-		return "Itinerario: " +
+		String salida = "Itinerario: " +
 				"usuario = " + usuario.getNombre() +
 				", horasNecesarias = " + horasNecesarias +
 				", costoMonedas = " + costoMonedas +
-				", ListaDeVisitas = " + this.getListaDeVisitas().toString();
+				"\nListaDeVisitas = \n";
+		for (Facturable facturable : ListaDeVisitas) {
+			salida += facturable.toString();
+		}
+		return salida;
 	}
 }

@@ -1,1 +1,4 @@
-Itinerario: usuario = Micaela, horasNecesarias = 2.0, costoMonedas = 5.0, ListaDeVisitas = [Atraccion : Abismo de Helm, tiempo promedio : 2.0, costo : 5.0, tipo de atraccion : PAISAJE]
+Itinerario: usuario = Micaela, horasNecesarias = 2.5, costoMonedas = 5.0
+ListaDeVisitas = 
+Atraccion : Minas Tirith, tiempo promedio : 2.5, costo : 5.0 tipo de atraccion : PAISAJE
+

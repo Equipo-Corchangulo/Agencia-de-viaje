@@ -39,7 +39,7 @@ public class PromoAxB extends Promocion {
 
 	@Override
 	public String toString() {
-		return super.toString() +"Atraccion de regalo: \n" + atraccionExtra;
+		return super.toString() +" Atraccion de regalo: \n" + atraccionExtra;
 	}
 	
 	

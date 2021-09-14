@@ -18,7 +18,7 @@ public class PromoAbsoluta extends Promocion {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Todo al precio de: " + costoFijo;
+		return super.toString() + " Todo al precio de: " + costoFijo + "\n";
 	}
 
 	

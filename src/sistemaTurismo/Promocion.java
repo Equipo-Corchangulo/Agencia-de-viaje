@@ -27,9 +27,9 @@ public abstract class Promocion  implements Facturable {
 				+ " del tipo: " + this.getTipo()
 				+ " costo: " + this.obtenerCostoTotal()
 				+ " Tiempo requerido: " + this.obtenerTiempoTotal() + "\n"
-				+ "Atracciones Incluidas: \n";
+				+ "El paquete incluye: \n";
 			for (Facturable facturable : listaDeAtracciones) {
-				salida += facturable.toString();
+				salida += " " + facturable.toString();
 			}
 		return salida;
 	}
