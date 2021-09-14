@@ -19,7 +19,7 @@ public class PromoPorcentual extends Promocion {
 	@Override
 	public double obtenerCostoTotal() {
 		double costoTotal = super.obtenerCostoTotal();
-		costoTotal -= costoTotal * porcentajeDescuento;
+		costoTotal -= costoTotal *  (porcentajeDescuento*0.01);
 		return costoTotal;
 	}
 
