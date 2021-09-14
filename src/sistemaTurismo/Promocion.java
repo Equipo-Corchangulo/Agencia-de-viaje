@@ -23,7 +23,7 @@ public abstract class Promocion  implements Facturable {
 
 	@Override
 	public String toString() {
-		String salida = "promocion: "+ this.nombreDePromocion
+		String salida = "Promoción: "+ this.nombreDePromocion
 				+ " del tipo: " + this.getTipo()
 				+ " costo: " + this.obtenerCostoTotal()
 				+ " Tiempo requerido: " + this.obtenerTiempoTotal() + "\n"
