@@ -51,8 +51,14 @@ public class ManejadorDeArchivo {
 		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
 		String[] indicesAtracciones = promocionBase[3].split("-");
 
-		for (String indice : indicesAtracciones) {
-			listaDeAtracciones.add(AgenciaTurismo.facturables.get(Integer.parseInt(indice))); 
+		for (String id : indicesAtracciones) {
+			
+			for (Facturable facturable : AgenciaTurismo.facturables) {
+				if(((Atraccion) facturable).getID() == Integer.parseInt(id)) {
+					listaDeAtracciones.add(facturable);
+					break;
+				}
+			}
 		}
 
 		Promocion nuevaPromocion;
@@ -130,7 +136,6 @@ public class ManejadorDeArchivo {
 	}
 
 	public static void guardarItinerarioEnArchivo(Itinerario itinerarioAImprimir){
-		//hacer mi logica para guardar
 		File f = new File("files/ReportedeItinerarios"+itinerarioAImprimir.getUsuario().getNombre()+".txt");
 		PrintWriter pw;
 

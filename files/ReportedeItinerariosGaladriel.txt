@@ -1,4 +1,4 @@
 Itinerario: usuario = Galadriel, horasNecesarias = 2.0, costoMonedas = 5.0
 ListaDeVisitas = 
-Atraccion : Abismo de Helm, tiempo promedio : 2.0, costo : 5.0 tipo de atraccion : PAISAJE
+Atraccion: Abismo de Helm, duracion: 2.0, costo: 5.0 tipo de atraccion: PAISAJE
 
