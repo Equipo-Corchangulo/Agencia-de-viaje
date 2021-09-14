@@ -41,7 +41,5 @@ public class PromoAxB extends Promocion {
 	public String toString() {
 		return super.toString() +" Atraccion de regalo: \n" + atraccionExtra;
 	}
-	
-	
-	
+
 }

@@ -21,5 +21,4 @@ public class PromoAbsoluta extends Promocion {
 		return super.toString() + " Todo al precio de: " + costoFijo + "\n";
 	}
 
-	
 }
