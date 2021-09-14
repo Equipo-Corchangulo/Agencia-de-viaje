@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
-/*import static org.junit.Assert.assertArrayEquals;*/
 
 public class ItinerarioTest {
 	public Facturable atraccionMoria = new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA,0);
@@ -22,73 +21,69 @@ public class ItinerarioTest {
 	
 	public List<Facturable> atraccionDePromo = new ArrayList<Facturable>();
 	
-	public PerfilUsuario usurio = new PerfilUsuario("Irina", 1000, 100, TipoDeAtraccion.AVENTURA);
+	public PerfilUsuario usuario = new PerfilUsuario("Irina", 1000, 100, TipoDeAtraccion.AVENTURA);
 	
 	  
-	@Test
-	public void testuno() {
-		 List<Facturable> ListaDeVisitasEsperada = new ArrayList<Facturable>();
-		  ListaDeVisitasEsperada.add(new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA,1));
-		  List<Facturable> ListaDeVisitasFinal = new ArrayList<Facturable>();
-		  ListaDeVisitasFinal.add(new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA,1));
-		  assertArrayEquals(ListaDeVisitasEsperada.toArray(), ListaDeVisitasFinal.toArray() );
 
+	@Test
+	public void getHorasNecesariasTest() {
+		Itinerario itinerarioHoras = new Itinerario(usuario);
+		itinerarioHoras.agregarAtraccion(atraccionMoria);
+		itinerarioHoras.agregarAtraccion(atraccionBosqueNegro);
+		assertEquals(6, itinerarioHoras.getHorasNecesarias(), 0);
+	}
+	
+	@Test
+	public void getCostoMonedasTest() {
+		Itinerario itinerarioCosto = new Itinerario(usuario);
+		itinerarioCosto.agregarAtraccion(atraccionMoria);
+		itinerarioCosto.agregarAtraccion(atraccionBosqueNegro);
+		assertEquals(13, itinerarioCosto.getCostoMonedas(), 0);
 	}
 	
 	@Test
 	public void getListaDeVisitasTest() {
-  		List<Facturable> ListaDeVisitasEsperada = new ArrayList<Facturable>();
-  		Facturable atraccion = new Atraccion("Aventura", 10, 2, 6, TipoDeAtraccion.AVENTURA,0);
-  		PerfilUsuario usuario = new PerfilUsuario("Irina",10.0,5,TipoDeAtraccion.AVENTURA);
-		Itinerario prueba01 = new Itinerario(usuario);
-
-  		ListaDeVisitasEsperada.add(atraccion);
-  		prueba01.agregarAtraccion(atraccion);
-  		assertEquals(ListaDeVisitasEsperada, prueba01.getListaDeVisitas());
-
+	
 	}
 	
-
 	
-	   @Test
-	   public void poseeAtraccionTest() {
-		   atraccion.add(atraccionMoria);
-		   atraccion.add(atraccionBosqueNegro);
-		   atraccionDePromo.add(atraccionMoria);
-		   atraccionDePromo.add(atraccionMordor);
+	@Test
+	public void poseeAtraccionTest() {
+		atraccion.add(atraccionMoria);
+		atraccion.add(atraccionBosqueNegro);
+		atraccionDePromo.add(atraccionMoria);
+		atraccionDePromo.add(atraccionMordor);
 		   
-		  Facturable promoPorcentual = new PromoPorcentual(atraccionDePromo,TipoDeAtraccion.AVENTURA , "Promo 1", 0.5);
-		  Facturable promoAxB = new PromoAxB(atraccionDePromo,TipoDeAtraccion.AVENTURA , "Promo 2", atraccionMordor);
+		Facturable promoPorcentual = new PromoPorcentual(atraccionDePromo,TipoDeAtraccion.AVENTURA , "Promo 1", 0.5);
+		Facturable promoAxB = new PromoAxB(atraccionDePromo,TipoDeAtraccion.AVENTURA , "Promo 2", atraccionMordor);
 
-		  Itinerario itinerario = new Itinerario(usurio);
-
-			itinerario.agregarAtraccion(promoPorcentual);
+		Itinerario itinerario = new Itinerario(usuario);
+		itinerario.agregarAtraccion(promoPorcentual);
 			
-			assertTrue(itinerario.poseeAtraccion(promoAxB));
-			atraccion.clear();
-			atraccionDePromo.clear();
-	    
+		assertTrue(itinerario.poseeAtraccion(promoAxB));
+		atraccion.clear();
+		atraccionDePromo.clear();
 	}
 	   
-	   @Test 
-	   
-	   public void poseeAtraccionTest2() {
-			atraccion.add(atraccionMoria);
-			atraccion.add(atraccionBosqueNegro);
-			Facturable promoPorcentual = new PromoPorcentual(atraccion,TipoDeAtraccion.AVENTURA , "Promo 1", 0.5);
+	@Test 	   
+	public void poseeAtraccionTest2() {
+		atraccion.add(atraccionMoria);
+		atraccion.add(atraccionBosqueNegro);
+		Facturable promoPorcentual = new PromoPorcentual(atraccion,TipoDeAtraccion.AVENTURA , "Promo 1", 0.5);
+				
+		Itinerario itinerario = new Itinerario(usuario);
+		itinerario.agregarAtraccion(promoPorcentual);
 			
-			
-			Itinerario itinerario = new Itinerario(usurio);
-
-			itinerario.agregarAtraccion(promoPorcentual);
-			
-			assertTrue(itinerario.poseeAtraccion(atraccionMoria));
-			assertTrue(itinerario.poseeAtraccion(atraccionBosqueNegro));
-			assertFalse(itinerario.poseeAtraccion(atraccionErebor));
-			atraccion.clear();
-			atraccionDePromo.clear();
-	
+		assertTrue(itinerario.poseeAtraccion(atraccionMoria));
+		assertTrue(itinerario.poseeAtraccion(atraccionBosqueNegro));
+		assertFalse(itinerario.poseeAtraccion(atraccionErebor));
+		atraccion.clear();
+		atraccionDePromo.clear();	
 	   }
 	
-
+	@Test
+	public void getUsuarioTest() {
+		Itinerario itinerario = new Itinerario(usuario);
+		assertNotNull(itinerario.getUsuario());
+	}
 }
