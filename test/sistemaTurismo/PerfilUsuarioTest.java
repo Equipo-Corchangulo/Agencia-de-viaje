@@ -68,5 +68,6 @@ public class PerfilUsuarioTest {
                 assertTrue(Gandalf.puedeComprar(atraccionMoria));
                 assertFalse(Eowyn.puedeComprar(atraccionMinasTirith));
 	}
+
 	
 }

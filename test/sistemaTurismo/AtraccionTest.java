@@ -2,6 +2,8 @@ package sistemaTurismo;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -16,6 +18,13 @@ public class AtraccionTest {
     Atraccion atraccionErebor = new Atraccion("Paisaje", 12, 3, 32, TipoDeAtraccion.PAISAJE,6);
     Atraccion atraccionBosqueNegro = new Atraccion("Aventura", 3, 4, 12, TipoDeAtraccion.AVENTURA,7);
 
+    public List<Facturable> promoP1 = new ArrayList<Facturable>();
+    public List<Facturable> promoP2 = new ArrayList<Facturable>();
+    public List<Facturable> promoP3 = new ArrayList<Facturable>();
+    
+    PromoAbsoluta p1 = new PromoAbsoluta(promoP1, TipoDeAtraccion.AVENTURA, "Promocion Absoluta", 10);
+    PromoPorcentual p2 = new PromoPorcentual(promoP2, TipoDeAtraccion.AVENTURA, "Pack Aventura", 30);
+	PromoAxB p3 = new PromoAxB(promoP3, TipoDeAtraccion.AVENTURA, "Promo AxB", atraccionErebor);
 
     @Test
     public void crearAtraccion() {
@@ -111,11 +120,26 @@ public class AtraccionTest {
     
     @Test
     public void seEncuentraEnElFacturableTest() {
+    	/*****Testea si las promociones se encuentran en Facturable*****/
     	
-    	/*------------HAY QUE CHEQUEAR QUE LAS PROMOCIONES TAMBIEN SE ENCUENTREN EN FACTURABLE------*/
-    	/*List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
-    	/*Promocion promo01 = new Promocion(listaDeAtracciones, TipoDeAtraccion.AVENTURA, "Promo AXB");
-    	/*assertTrue(atraccionMoria.seEncuentraEnElFacturable(promo01));*/
+    	promoP1.add(atraccionMoria);
+    	promoP1.add(atraccionBosqueNegro);
+    	assertTrue(atraccionMoria.seEncuentraEnElFacturable(p1));
+    	assertFalse(atraccionAbismoDeHelm.seEncuentraEnElFacturable(p1));
+    	
+    	promoP2.add(atraccionAbismoDeHelm);
+    	promoP2.add(atraccionLaComarca);
+    	assertTrue(atraccionLaComarca.seEncuentraEnElFacturable(p2));
+    	assertFalse(atraccionMoria.seEncuentraEnElFacturable(p2));
+    	
+    	promoP3.add(atraccionLothlorien);
+    	promoP3.add(atraccionMordor);
+    	assertTrue(atraccionMordor.seEncuentraEnElFacturable(p3));
+    	assertTrue(atraccionErebor.seEncuentraEnElFacturable(p3));
+    	assertFalse(atraccionLaComarca.seEncuentraEnElFacturable(p3));
+
+    	
+    	/*****Testea si las atracciones se encuentran en Facturable*****/
     	
     	assertTrue(atraccionMoria.seEncuentraEnElFacturable(atraccionMoria));
     	assertTrue(atraccionMinasTirith.seEncuentraEnElFacturable(atraccionMinasTirith));

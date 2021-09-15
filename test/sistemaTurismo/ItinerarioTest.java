@@ -42,12 +42,6 @@ public class ItinerarioTest {
 	}
 	
 	@Test
-	public void getListaDeVisitasTest() {
-	
-	}
-	
-	
-	@Test
 	public void poseeAtraccionTest() {
 		atraccion.add(atraccionMoria);
 		atraccion.add(atraccionBosqueNegro);
