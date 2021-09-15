@@ -24,11 +24,19 @@ public class Recomendador {
 		//si el usuario ingresa 1 es verdadero sino no.
 
 		@SuppressWarnings("resource")
+				int entradaDelUsuario = 10;
 		Scanner teclado = new Scanner(System.in);
-		if (teclado.hasNextInt())
-		return teclado.nextInt() == 1;
-		else
-			return false;
+		while (entradaDelUsuario != 0 && entradaDelUsuario != 1){
+
+			System.out.println("Presione 1 para aceptar y 0 para cancelar");
+			if (teclado.hasNextInt())
+				entradaDelUsuario = teclado.nextInt();
+			else
+				entradaDelUsuario = 10;
+		}
+
+		return entradaDelUsuario == 1;
+
 	}
 
 	public void ofrecerSugerencias() {
@@ -38,7 +46,6 @@ public class Recomendador {
 			System.out.println(usuario);
 			System.out.println("-------------------------------");
 			System.out.println();
-			System.out.println("Presione 1 para aceptar y 0 para cancelar");
 
 			Collections.sort(listaDeFacturables, new ComparadorDeFacturable(usuario.getTipoDeAtraccion()));
 
