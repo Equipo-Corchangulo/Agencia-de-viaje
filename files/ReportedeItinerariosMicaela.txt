@@ -1,8 +1,8 @@
 Nombre: Micaela
-Monedas Disponibles: 2.0
-Tiempo Disponible: 1.0
+Monedas Disponibles: 0.0
+Tiempo Disponible: 2.5
 Tipo de atraccion: DEGUSTACION 
-Itinerario: , horasNecesarias = 4.0, costoMonedas = 3.0
+Itinerario: , horasNecesarias = 2.5, costoMonedas = 5.0
 ListaDeVisitas = 
-Atraccion: Bosque Negro, duracion: 4.0, costo: 3.0 tipo de atraccion: AVENTURA
+Atraccion: Minas Tirith, duracion: 2.5, costo: 5.0 tipo de atraccion: PAISAJE
 

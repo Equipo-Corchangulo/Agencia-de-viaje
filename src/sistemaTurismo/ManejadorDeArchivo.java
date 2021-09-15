@@ -165,8 +165,9 @@ public class ManejadorDeArchivo {
 
 			System.out.println("------------------------- REPORTE DE ITINERARIO ------------------------");
 			pw.write(usuario.toString() + "\n"+itinerarioAImprimir.toString() + "\n");
-			System.out.println(itinerarioAImprimir);
-			System.out.println("------------------------- FIN DE REPORTE -------------------------------");
+			System.out.println(Recomendador.ANSI_BLUE+usuario);
+			System.out.println(Recomendador.ANSI_WHITE+itinerarioAImprimir);
+			System.out.println(Recomendador.ANSI_CYAN+"------------------------- FIN DE REPORTE -------------------------------");
 			System.out.println();
 			System.out.println();
 			pw.close();
