@@ -1,0 +1,2 @@
+Moria,10.0,2,6,AVENTURA,0
+Bosque Negro,3,4,12,AVENTURA,7

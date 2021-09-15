@@ -5,11 +5,11 @@ import java.util.List;
 
 public class ManejadorDeArchivo {
 
-	public static List<Facturable> obtenerFacturables() {
+	public static List<Facturable> obtenerFacturables(String ArchivoAtracciones, String ArchivoPromociones) {
 		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
 
-		AgenciaTurismo.facturables = leerArchivos("Files/Atracciones.txt", false, listaDeAtracciones);
-		leerArchivos("files/Promociones.txt", true, AgenciaTurismo.facturables);	
+		AgenciaTurismo.facturables = leerArchivos(ArchivoAtracciones, false, listaDeAtracciones);
+		leerArchivos(ArchivoPromociones, true, AgenciaTurismo.facturables);
 		return listaDeAtracciones;
 	}
 	
@@ -100,13 +100,13 @@ public class ManejadorDeArchivo {
 		return nuevaAtraccion;
 	}
 
-	public static List <PerfilUsuario> obtenerUsuario() {
+	public static List <PerfilUsuario> obtenerUsuario(String Archivousuario) {
 		 List <PerfilUsuario> listaDePerfilUsuario = new ArrayList<PerfilUsuario>();
 		FileReader fr = null;
 		BufferedReader br = null;
 
 		try {
-			fr = new FileReader("files/PerfilUsuario.txt");
+			fr = new FileReader(Archivousuario);
 			br = new BufferedReader(fr);
 			String linea;
 

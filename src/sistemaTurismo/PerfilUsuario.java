@@ -1,5 +1,7 @@
 package sistemaTurismo;
 
+import java.util.Objects;
+
 public class PerfilUsuario {
 
 	private double presupuesto;
@@ -56,4 +58,16 @@ public class PerfilUsuario {
 				&& atraccion.obtenerTiempoTotal() <= this.tiempoDisponible;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		PerfilUsuario that = (PerfilUsuario) o;
+		return Double.compare(that.getPresupuesto(), getPresupuesto()) == 0 && Double.compare(that.getTiempoDisponible(), getTiempoDisponible()) == 0 && getNombre().equals(that.getNombre()) && getTipoDeAtraccion() == that.getTipoDeAtraccion();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getPresupuesto(), getTiempoDisponible(), getNombre(), getTipoDeAtraccion());
+	}
 }

@@ -25,8 +25,10 @@ public class Recomendador {
 
 		@SuppressWarnings("resource")
 		Scanner teclado = new Scanner(System.in);
-		
+		if (teclado.hasNextInt())
 		return teclado.nextInt() == 1;
+		else
+			return false;
 	}
 
 	public void ofrecerSugerencias() {

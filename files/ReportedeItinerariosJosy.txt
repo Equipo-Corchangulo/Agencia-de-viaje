@@ -1,0 +1,4 @@
+Itinerario: usuario = Josy, horasNecesarias = 3.0, costoMonedas = 12.0
+ListaDeVisitas = 
+Atraccion: Erebor, duracion: 3.0, costo: 12.0 tipo de atraccion: PAISAJE
+
