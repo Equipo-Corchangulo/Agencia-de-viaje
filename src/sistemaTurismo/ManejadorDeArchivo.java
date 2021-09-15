@@ -50,16 +50,28 @@ public class ManejadorDeArchivo {
 		String nombreDePromocion = promocionBase[2];
 		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
 		String[] indicesAtracciones = promocionBase[3].split("-");
-
-		for (String id : indicesAtracciones) {
-			
-			for (Facturable facturable : AgenciaTurismo.facturables) {
-				if(((Atraccion) facturable).getID() == Integer.parseInt(id)) {
-					listaDeAtracciones.add(facturable);
-					break;
+		boolean atraccionEncontrada;
+		try {
+			for (String id : indicesAtracciones) {
+				atraccionEncontrada = false;
+				
+				for (Facturable facturable : AgenciaTurismo.facturables) {
+					if(((Atraccion) facturable).getID() == Integer.parseInt(id)) {
+						listaDeAtracciones.add(facturable);
+						atraccionEncontrada = true;
+						break;
+					}
+				}
+				if(!atraccionEncontrada) {
+					throw new AtraccionNotFoundException(id);
 				}
 			}
 		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 
 		Promocion nuevaPromocion;
 		switch (tipoPromocion){
