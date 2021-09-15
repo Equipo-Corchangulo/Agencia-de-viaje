@@ -155,15 +155,16 @@ public class ManejadorDeArchivo {
 		return listaDePerfilUsuario;
 	}
 
-	public static void guardarItinerarioEnArchivo(Itinerario itinerarioAImprimir){
-		File f = new File("files/ReportedeItinerarios"+itinerarioAImprimir.getUsuario().getNombre()+".txt");
+	public static void guardarItinerarioEnArchivo(PerfilUsuario usuario){
+		File f = new File("files/ReportedeItinerarios"+ usuario.getNombre()+".txt");
 		PrintWriter pw;
-
+		Itinerario itinerarioAImprimir = usuario.getItinerario();
 		try {
 			pw = new PrintWriter(f);
 
+
 			System.out.println("------------------------- REPORTE DE ITINERARIO ------------------------");
-			pw.write(itinerarioAImprimir.toString() + "\n");
+			pw.write(usuario.toString() + "\n"+itinerarioAImprimir.toString() + "\n");
 			System.out.println(itinerarioAImprimir);
 			System.out.println("------------------------- FIN DE REPORTE -------------------------------");
 			System.out.println();

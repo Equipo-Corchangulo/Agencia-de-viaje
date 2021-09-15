@@ -1,3 +1,8 @@
-Itinerario: usuario = Micaela, horasNecesarias = 0.0, costoMonedas = 0.0
+Nombre: Micaela
+Monedas Disponibles: 2.0
+Tiempo Disponible: 1.0
+Tipo de atraccion: DEGUSTACION 
+Itinerario: , horasNecesarias = 4.0, costoMonedas = 3.0
 ListaDeVisitas = 
+Atraccion: Bosque Negro, duracion: 4.0, costo: 3.0 tipo de atraccion: AVENTURA
 

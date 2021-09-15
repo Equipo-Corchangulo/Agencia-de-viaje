@@ -40,27 +40,25 @@ public class Recomendador {
 			System.out.println();
 			System.out.println("Presione 1 para aceptar y 0 para cancelar");
 
-			Itinerario nuevoItinerario = new Itinerario(usuario);
-
 			Collections.sort(listaDeFacturables, new ComparadorDeFacturable(usuario.getTipoDeAtraccion()));
 
-			iterarSugerencias(usuario, nuevoItinerario);
-			ManejadorDeArchivo.guardarItinerarioEnArchivo(nuevoItinerario);
+			iterarSugerencias(usuario);
+			ManejadorDeArchivo.guardarItinerarioEnArchivo(usuario);
 		}
 	}
 	
-	public void iterarSugerencias(PerfilUsuario usuario, Itinerario nuevoItinerario) {
+	public void iterarSugerencias(PerfilUsuario usuario) {
 		for (Facturable atraccion :listaDeFacturables) {
 			if (!usuario.tieneTiempoYdinero()){
 				return;
 			}
-			else if(nuevoItinerario.puedeComprar(atraccion)){
+			else if(usuario.puedeComprar(atraccion)){
 
 				System.out.println(atraccion);
 	
 				//si el usuario lo quiere la agregamos al itinerario
 				if(leer()) {
-					nuevoItinerario.agregarAtraccion(atraccion);
+					usuario.agregarAtraccion(atraccion);
 				}
 			}
 		}

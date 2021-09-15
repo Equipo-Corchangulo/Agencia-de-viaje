@@ -1,4 +1,8 @@
-Itinerario: usuario = Sam, horasNecesarias = 7.5, costoMonedas = 36.0
+Nombre: Sam
+Monedas Disponibles: 0.0
+Tiempo Disponible: 0.5
+Tipo de atraccion: DEGUSTACION 
+Itinerario: , horasNecesarias = 7.5, costoMonedas = 36.0
 ListaDeVisitas = 
 Promocion: Pack Degustacion del tipo: DEGUSTACION costo: 36.0 Tiempo requerido: 7.5
 El paquete incluye: 

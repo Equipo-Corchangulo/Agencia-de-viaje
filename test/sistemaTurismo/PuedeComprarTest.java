@@ -10,7 +10,6 @@ import org.junit.Test;
 public class PuedeComprarTest {
 	
 			public PerfilUsuario u1 = new PerfilUsuario("pepito", 100, 100, TipoDeAtraccion.AVENTURA);
-			public Itinerario i1 = new Itinerario(u1);
 			
 	 		public Facturable a1 = new Atraccion ("a1", 10, 3, 1, TipoDeAtraccion.AVENTURA,0);
 			public Facturable a2 = new Atraccion ("a2", 4, 2.5, 1, TipoDeAtraccion.AVENTURA,1);
@@ -29,27 +28,27 @@ public class PuedeComprarTest {
 	public void test01() {
 		lista01.add(a1);
 		lista01.add(a2);
-		
-		i1.agregarAtraccion(p1);
-		assertFalse(i1.puedeComprar(a2));
+
+		u1.agregarAtraccion(p1);
+		assertFalse(u1.puedeComprar(a2));
 	}
 	
 	@Test
 	public void test02() {
 		lista01.add(a1);
 		lista01.add(a3);
-		
-		i1.agregarAtraccion(p1);
-		assertFalse(i1.puedeComprar(p2));
+
+		u1.agregarAtraccion(p1);
+		assertFalse(u1.puedeComprar(p2));
 	}
 	
 	@Test
 	public void test03() {
 		lista01.add(a2);
 		lista01.add(a4);
-		
-		i1.agregarAtraccion(p3);
-		assertFalse(i1.puedeComprar(p4));
+
+		u1.agregarAtraccion(p3);
+		assertFalse(u1.puedeComprar(p4));
 	}
 	
 	

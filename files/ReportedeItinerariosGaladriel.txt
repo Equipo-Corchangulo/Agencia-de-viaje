@@ -1,4 +1,8 @@
-Itinerario: usuario = Galadriel, horasNecesarias = 2.0, costoMonedas = 5.0
+Nombre: Galadriel
+Monedas Disponibles: 115.0
+Tiempo Disponible: 0.0
+Tipo de atraccion: PAISAJE 
+Itinerario: , horasNecesarias = 2.0, costoMonedas = 5.0
 ListaDeVisitas = 
 Atraccion: Abismo de Helm, duracion: 2.0, costo: 5.0 tipo de atraccion: PAISAJE
 

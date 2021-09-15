@@ -1,4 +1,8 @@
-Itinerario: usuario = Mariano, horasNecesarias = 4.0, costoMonedas = 3.0
+Nombre: Mariano
+Monedas Disponibles: 1.0
+Tiempo Disponible: 0.0
+Tipo de atraccion: AVENTURA 
+Itinerario: , horasNecesarias = 4.0, costoMonedas = 3.0
 ListaDeVisitas = 
 Atraccion: Bosque Negro, duracion: 4.0, costo: 3.0 tipo de atraccion: AVENTURA
 

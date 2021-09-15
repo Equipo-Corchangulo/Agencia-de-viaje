@@ -1,4 +1,8 @@
-Itinerario: usuario = Eowyn, horasNecesarias = 2.0, costoMonedas = 10.0
+Nombre: Eowyn
+Monedas Disponibles: 0.0
+Tiempo Disponible: 6.0
+Tipo de atraccion: AVENTURA 
+Itinerario: , horasNecesarias = 2.0, costoMonedas = 10.0
 ListaDeVisitas = 
 Atraccion: Moria, duracion: 2.0, costo: 10.0 tipo de atraccion: AVENTURA
 

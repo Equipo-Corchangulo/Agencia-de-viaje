@@ -1,4 +1,9 @@
-Itinerario: usuario = Josy, horasNecesarias = 3.0, costoMonedas = 12.0
+Nombre: Josy
+Monedas Disponibles: 2.0
+Tiempo Disponible: 2.5
+Tipo de atraccion: PAISAJE 
+Itinerario: , horasNecesarias = 4.5, costoMonedas = 10.0
 ListaDeVisitas = 
-Atraccion: Erebor, duracion: 3.0, costo: 12.0 tipo de atraccion: PAISAJE
+Atraccion: Minas Tirith, duracion: 2.5, costo: 5.0 tipo de atraccion: PAISAJE
+Atraccion: Abismo de Helm, duracion: 2.0, costo: 5.0 tipo de atraccion: PAISAJE
 

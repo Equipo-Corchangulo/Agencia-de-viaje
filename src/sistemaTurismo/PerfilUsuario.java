@@ -9,12 +9,14 @@ public class PerfilUsuario {
 	private double tiempoDisponible;
 	private String nombre;
 	private TipoDeAtraccion tipoDeAtraccion;
+	private Itinerario itinerario;
 
 	public PerfilUsuario(String nombre, double presupuesto, int tiempoDisponible, TipoDeAtraccion tipoDeAtraccion) {
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
 		this.tipoDeAtraccion = tipoDeAtraccion;
+		this.itinerario = new Itinerario();
 	}
 
 	@Override
@@ -53,11 +55,6 @@ public class PerfilUsuario {
 		return this.tiempoDisponible > 0 && this.presupuesto > 0 ;
 	}
 
-	public boolean puedeComprar(Facturable atraccion) {
-		return atraccion.obtenerCostoTotal() <= this.presupuesto 
-				&& atraccion.obtenerTiempoTotal() <= this.tiempoDisponible;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -70,4 +67,22 @@ public class PerfilUsuario {
 	public int hashCode() {
 		return Objects.hash(getPresupuesto(), getTiempoDisponible(), getNombre(), getTipoDeAtraccion());
 	}
+
+	public void agregarAtraccion(Facturable atraccion) {
+		this.itinerario.agregarAtraccion(atraccion);
+		atraccion.restarCupo();
+		this.reservarTiempoYdinero(atraccion);
+	}
+
+	public boolean puedeComprar(Facturable atraccion) {
+		return  !this.itinerario.poseeAtraccion(atraccion)
+				&& atraccion.obtenerCostoTotal() <= this.presupuesto
+				&& atraccion.obtenerTiempoTotal() <= this.tiempoDisponible
+				&& atraccion.hayCupo();
+	}
+
+	public Itinerario getItinerario(){
+		return  this.itinerario;
+	}
+
 }

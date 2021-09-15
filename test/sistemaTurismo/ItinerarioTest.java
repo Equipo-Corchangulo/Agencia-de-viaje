@@ -27,18 +27,16 @@ public class ItinerarioTest {
 
 	@Test
 	public void getHorasNecesariasTest() {
-		Itinerario itinerarioHoras = new Itinerario(usuario);
-		itinerarioHoras.agregarAtraccion(atraccionMoria);
-		itinerarioHoras.agregarAtraccion(atraccionBosqueNegro);
-		assertEquals(6, itinerarioHoras.getHorasNecesarias(), 0);
+		usuario.agregarAtraccion(atraccionMoria);
+		usuario.agregarAtraccion(atraccionBosqueNegro);
+		assertEquals(6, usuario.getItinerario().getHorasNecesarias(), 0);
 	}
 	
 	@Test
 	public void getCostoMonedasTest() {
-		Itinerario itinerarioCosto = new Itinerario(usuario);
-		itinerarioCosto.agregarAtraccion(atraccionMoria);
-		itinerarioCosto.agregarAtraccion(atraccionBosqueNegro);
-		assertEquals(13, itinerarioCosto.getCostoMonedas(), 0);
+		usuario.agregarAtraccion(atraccionMoria);
+		usuario.agregarAtraccion(atraccionBosqueNegro);
+		assertEquals(13, usuario.getItinerario().getCostoMonedas(), 0);
 	}
 	
 	@Test
@@ -51,10 +49,9 @@ public class ItinerarioTest {
 		Facturable promoPorcentual = new PromoPorcentual(atraccionDePromo,TipoDeAtraccion.AVENTURA , "Promo 1", 0.5);
 		Facturable promoAxB = new PromoAxB(atraccionDePromo,TipoDeAtraccion.AVENTURA , "Promo 2", atraccionMordor);
 
-		Itinerario itinerario = new Itinerario(usuario);
-		itinerario.agregarAtraccion(promoPorcentual);
+		usuario.agregarAtraccion(promoPorcentual);
 			
-		assertTrue(itinerario.poseeAtraccion(promoAxB));
+		assertTrue(usuario.getItinerario().poseeAtraccion(promoAxB));
 		atraccion.clear();
 		atraccionDePromo.clear();
 	}
@@ -64,20 +61,13 @@ public class ItinerarioTest {
 		atraccion.add(atraccionMoria);
 		atraccion.add(atraccionBosqueNegro);
 		Facturable promoPorcentual = new PromoPorcentual(atraccion,TipoDeAtraccion.AVENTURA , "Promo 1", 0.5);
-				
-		Itinerario itinerario = new Itinerario(usuario);
-		itinerario.agregarAtraccion(promoPorcentual);
-			
+
+		usuario.agregarAtraccion(promoPorcentual);
+		Itinerario itinerario = usuario.getItinerario();
 		assertTrue(itinerario.poseeAtraccion(atraccionMoria));
 		assertTrue(itinerario.poseeAtraccion(atraccionBosqueNegro));
 		assertFalse(itinerario.poseeAtraccion(atraccionErebor));
 		atraccion.clear();
 		atraccionDePromo.clear();	
 	   }
-	
-	@Test
-	public void getUsuarioTest() {
-		Itinerario itinerario = new Itinerario(usuario);
-		assertNotNull(itinerario.getUsuario());
-	}
 }
