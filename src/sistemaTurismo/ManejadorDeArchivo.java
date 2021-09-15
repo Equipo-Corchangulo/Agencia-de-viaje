@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ManejadorDeArchivo {
 
-	public static List<Facturable> obtenerFacturables(String ArchivoAtracciones, String ArchivoPromociones) {
+	public static List<Facturable> obtenerFacturables(String ArchivoAtracciones, String ArchivoPromociones) throws AtraccionNotFoundException{
 		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
 
 		AgenciaTurismo.facturables = leerArchivos(ArchivoAtracciones, false, listaDeAtracciones);
@@ -15,7 +15,7 @@ public class ManejadorDeArchivo {
 	
 	private static List<Facturable> leerArchivos(String nombreDeArchivo
 			, boolean esPromocion
-			, List<Facturable> listaDeAtracciones){
+			, List<Facturable> listaDeAtracciones) throws AtraccionNotFoundException{
 
 		FileReader fr = null;
 		BufferedReader br = null;
@@ -25,21 +25,16 @@ public class ManejadorDeArchivo {
 			br = new BufferedReader(fr);
 			String linea;
 			while ((linea = br.readLine())!= null) {
-				try {
-					String [] elementoBase = linea.split(",");
-					Facturable elemento = esPromocion ? crearPromocion(elementoBase) : crearAtraccion(elementoBase);
-					listaDeAtracciones.add(elemento);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				
+				String [] elementoBase = linea.split(",");
+				Facturable elemento = esPromocion ? crearPromocion(elementoBase) : crearAtraccion(elementoBase);
+				listaDeAtracciones.add(elemento);
+				 
 			}
 			br.close();
 			fr.close();
 		}
 		catch (IOException e) {
-			e.printStackTrace();
-		}
-		catch(Exception e) {
 			e.printStackTrace();
 		}
 

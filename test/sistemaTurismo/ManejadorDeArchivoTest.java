@@ -19,7 +19,7 @@ public class ManejadorDeArchivoTest {
 	}
 
 	@Test
-	public void obtenerFacturableTest(){
+	public void obtenerFacturableTest() throws AtraccionNotFoundException{
 		List<Facturable> facturables = ManejadorDeArchivo.obtenerFacturables("files/AtraccionesTest.txt", "files/PromocionesTest.txt");
 		Atraccion atraccion1 = new Atraccion("Moria",10.0,2,6,TipoDeAtraccion.AVENTURA,0);
 		Atraccion atraccion2 = new Atraccion("Bosque Negro",3,4,12,TipoDeAtraccion.AVENTURA,7);

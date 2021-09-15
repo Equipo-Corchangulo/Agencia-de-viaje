@@ -1,4 +1,3 @@
-Itinerario: usuario = Micaela, horasNecesarias = 2.5, costoMonedas = 5.0
+Itinerario: usuario = Micaela, horasNecesarias = 0.0, costoMonedas = 0.0
 ListaDeVisitas = 
-Atraccion: Minas Tirith, duracion: 2.5, costo: 5.0 tipo de atraccion: PAISAJE
 

@@ -1,8 +1,8 @@
-Itinerario: usuario = Irina, horasNecesarias = 6.0, costoMonedas = 10.4
+Itinerario: usuario = Irina, horasNecesarias = 7.0, costoMonedas = 22.4
 ListaDeVisitas = 
-Promocion: Pack Aventura Test del tipo: AVENTURA costo: 10.4 Tiempo requerido: 6.0
+Promocion:  Pack Aventura del tipo: AVENTURA costo: 22.4 Tiempo requerido: 7.0
 El paquete incluye: 
- Atraccion: Moria, duracion: 2.0, costo: 10.0 tipo de atraccion: AVENTURA
  Atraccion: Bosque Negro, duracion: 4.0, costo: 3.0 tipo de atraccion: AVENTURA
+ Atraccion: Mordor, duracion: 3.0, costo: 25.0 tipo de atraccion: AVENTURA
  El porcentaje de descuento es de: 20.0% 
 
