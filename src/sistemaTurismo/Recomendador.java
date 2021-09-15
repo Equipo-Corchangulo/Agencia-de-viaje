@@ -69,9 +69,7 @@ public class Recomendador {
 
 			//si el usuario lo quiere la agregamos al itinerario
 			if(leer()) {
-				atraccion.restarCupo();
 				nuevoItinerario.agregarAtraccion(atraccion);
-				usuario.reservarTiempoYdinero(atraccion);
 			}
 		}
 	}

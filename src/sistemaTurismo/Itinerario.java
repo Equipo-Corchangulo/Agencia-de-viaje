@@ -30,9 +30,12 @@ public class Itinerario {
 	}
 
 	public void agregarAtraccion(Facturable atraccion) {
+		
 		this.ListaDeVisitas.add(atraccion);
 		horasNecesarias += atraccion.obtenerTiempoTotal();
 		costoMonedas += atraccion.obtenerCostoTotal();
+		atraccion.restarCupo();
+		this.usuario.reservarTiempoYdinero(atraccion);
 	}
 	 
 	public boolean poseeAtraccion(Facturable atraccion) {
