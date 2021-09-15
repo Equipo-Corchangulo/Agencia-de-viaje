@@ -39,11 +39,14 @@ public class ManejadorDeArchivo {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 
 
 		return listaDeAtracciones;
 	}
-	private static Promocion crearPromocion(String[] promocionBase){
+	private static Promocion crearPromocion(String[] promocionBase) throws AtraccionNotFoundException{
 	
 		Promocion.enumDePromocion tipoPromocion = Promocion.enumDePromocion.valueOf(promocionBase[0]);
 		TipoDeAtraccion tipoDePromocion = TipoDeAtraccion.valueOf(promocionBase[1]);
@@ -51,26 +54,23 @@ public class ManejadorDeArchivo {
 		List<Facturable> listaDeAtracciones = new ArrayList<Facturable>();
 		String[] indicesAtracciones = promocionBase[3].split("-");
 		boolean atraccionEncontrada;
-		try {
-			for (String id : indicesAtracciones) {
-				atraccionEncontrada = false;
-				
-				for (Facturable facturable : AgenciaTurismo.facturables) {
-					if(((Atraccion) facturable).getID() == Integer.parseInt(id)) {
-						listaDeAtracciones.add(facturable);
-						atraccionEncontrada = true;
-						break;
-					}
-				}
-				if(!atraccionEncontrada) {
-					throw new AtraccionNotFoundException(id);
+	
+		for (String id : indicesAtracciones) {
+			atraccionEncontrada = false;
+			
+			for (Facturable facturable : AgenciaTurismo.facturables) {
+				if(((Atraccion) facturable).getID() == Integer.parseInt(id)) {
+					listaDeAtracciones.add(facturable);
+					atraccionEncontrada = true;
+					break;
 				}
 			}
+			if(!atraccionEncontrada) {
+				throw new AtraccionNotFoundException(id);
+			}
 		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
+	
+		
 		
 
 		Promocion nuevaPromocion;
@@ -80,8 +80,21 @@ public class ManejadorDeArchivo {
 				nuevaPromocion = new PromoAbsoluta(listaDeAtracciones, tipoDePromocion, nombreDePromocion,costoFijo);
 				break;
 			case AXB:
-				int indiceDeAtraccionExtra = Integer.parseInt(promocionBase[4]);
-				 Facturable atraccionExtra = AgenciaTurismo.facturables.get(indiceDeAtraccionExtra);
+				int idDeAtraccionExtra = Integer.parseInt(promocionBase[4]);
+				
+				 Facturable atraccionExtra = null;
+				 atraccionEncontrada = false;
+				 
+				for (Facturable facturable : AgenciaTurismo.facturables) {
+					if(((Atraccion) facturable).getID() == idDeAtraccionExtra) {
+						atraccionExtra = facturable;
+						atraccionEncontrada = true;
+						break;
+					}
+				}
+				if (!atraccionEncontrada) {
+					throw new AtraccionNotFoundException(promocionBase[4]);
+				}
 				nuevaPromocion = new PromoAxB(listaDeAtracciones, tipoDePromocion, nombreDePromocion,atraccionExtra);
 				break;
 			case PORCENTUAL:
