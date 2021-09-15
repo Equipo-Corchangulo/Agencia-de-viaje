@@ -49,6 +49,10 @@ public class Itinerario {
 	public PerfilUsuario getUsuario(){
 		return this.usuario;
 	}
+	
+	public boolean puedeComprar(Facturable atraccion) {
+		return  !this.poseeAtraccion(atraccion) && usuario.puedeComprar(atraccion) && atraccion.hayCupo();
+	}
 
 	@Override
 	public String toString() {

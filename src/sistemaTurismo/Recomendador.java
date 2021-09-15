@@ -49,27 +49,19 @@ public class Recomendador {
 		}
 	}
 	
-	public boolean seDebeOcultarAtraccion(Facturable atraccion, Itinerario itinerario, PerfilUsuario usuario) {
-		
-		return itinerario.poseeAtraccion(atraccion) || !usuario.puedeComprar(atraccion) || !atraccion.hayCupo();
-	}
-	
 	public void iterarSugerencias(PerfilUsuario usuario, Itinerario nuevoItinerario) {
 		for (Facturable atraccion :listaDeFacturables) {
 			if (!usuario.tieneTiempoYdinero()){
 				return;
 			}
-			else if(seDebeOcultarAtraccion(atraccion, nuevoItinerario, usuario)){
-				continue;
-			}
-			
-			
+			else if(nuevoItinerario.puedeComprar(atraccion)){
 
-			System.out.println(atraccion);
-
-			//si el usuario lo quiere la agregamos al itinerario
-			if(leer()) {
-				nuevoItinerario.agregarAtraccion(atraccion);
+				System.out.println(atraccion);
+	
+				//si el usuario lo quiere la agregamos al itinerario
+				if(leer()) {
+					nuevoItinerario.agregarAtraccion(atraccion);
+				}
 			}
 		}
 	}
